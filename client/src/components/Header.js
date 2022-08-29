@@ -6,9 +6,10 @@ const Header = () => {
               <h1 className="text-5xl font-extrabold m-2 inline">Passivity</h1>
             </Link>
         <nav className="inline-flex fixed right-0">
-                <Link to="/about" className="w-fit m-4">About</Link>
-                <Link to="/portfolio" className="w-fit m-4">My Portfolio</Link>
-                <Link to="/login" className="w-fit m-4">Login</Link>
+                <Link to="/about" className="w-fit m-4 hover:text-slate-500">About</Link>
+                <Link to="/portfolio" className="w-fit m-4 hover:text-slate-500">My Portfolio</Link>
+                {/* add tertiary here to check login state. if logged in, display logout btn w logout function*/}
+                <Link to="/login" className="w-fit m-4 hover:text-slate-500">Login</Link>
         </nav>
     </header>
   )
