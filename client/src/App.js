@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import LoginCard from './components/LoginCard';
+import About from './components/About';
 
 function App() {
   return (
@@ -22,9 +23,7 @@ function App() {
 
         {/* about page */}
         <Route path='/about' element={
-          <div>
-            <p>about</p>
-          </div>
+          <About />
         } />
 
         {/* portfolio route */}
