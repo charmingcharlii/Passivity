@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import LoginCard from './components/LoginCard';
 import About from './components/About';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           </div>
         } />
       </Routes>
+      <Footer />
     </Router>
   );
 }
