@@ -2,18 +2,22 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-
+import LoginCard from './components/LoginCard';
 
 function App() {
   return (
     <Router>
-        <Header />
+      <Header />
       <Routes>
         {/* landing route */}
         <Route path='/' element={
           <div>
             <p>home</p>
           </div>
+        } />
+
+        <Route path="/login" element={
+          <LoginCard />
         } />
 
         {/* about page */}
