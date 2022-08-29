@@ -1,25 +1,50 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const userSchema = new Schema({
-    username: {
-        type: String,
-        required: true,
-        trim: true
+
+//TODO: Add portfolio to user. Check password encryption.
+const userSchema = new Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            unique: true
+        },
+
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            match: [/.+@.+\..+/, "Must follow an email address format."]
+        },
+
+        password: {
+            type: String,
+            required: true
+        }
+
     },
-    email: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true,
-        match: [/\w+@[^.]+/,'Please enter a valid email address']
-    },
-    password: {
-        type: String,
-        require: true,
-        minLength: 8
+    {
+        toJSON: {
+            virtuals: true
+        }
     }
-})
+);
 
-const User = model('User', userSchema)
+//Salt and hash password if it is a new user.
+userSchema.pre("save", async function (next) {
+    if(this.isNew || this.isModified("password")) {
+        const saltRounds = 10;
+        this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+});
 
-module.exports = User
+//Take in a password, compare with bcrypt to stored password.
+userSchema.methods.checkPassword = async function (password) {
+    return bcrypt.compare(password, this.password);
+}
+
+const User = model("User", userSchema);
+
+module.exports = User;
+
