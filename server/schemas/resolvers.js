@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
 // will need to import auth and User model 
+const { signToken } = require('../utils/auth')
 
 const resolvers = {
     Query: {
@@ -15,8 +16,9 @@ const resolvers = {
         addUser: async (parent, {name, email, password}) => {
             const user = await User.create({ name, email, password })
             // will need a variable that brings in the token from auth
-
+            const token = signToken(user)
             // returning token and user 
+            return { token, user }
         }, 
         login: async (parent, { username, email, password }) => {
             const user = await User.findOne({ username, email });
@@ -32,8 +34,9 @@ const resolvers = {
             }
 
             // will need variable for token 
-
+            const token = signToken(user)
             // returning token and user 
+            return { token, user }
         }, 
         saveHolding: async (parent, {ticker, holding, value}) => {
             // honestly not super sure what we are trying to do here; assume this is pulling from the api? 
