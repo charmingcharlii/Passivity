@@ -28,7 +28,6 @@ export default function PieGraph() {
             height="400px"
             data={data}
             options={options}
-            style={style}
         />
     );
 }
