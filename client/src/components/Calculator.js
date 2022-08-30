@@ -2,8 +2,14 @@ import React from 'react';
 
 
 export default function Calculator() {
-    let stockInput = document.getElementById("stock")
-    // fecth call for the stock itself 
+    // let stockInput = document.getElementById("stock")
+//    let btn = document.getElementById('calcBtn')
+
+//    btn.addEventListener('click', function (){
+//     // let dividend = // this will be the data pulled in from the api 
+//     let holdings = document.getElementById('holdings').value;
+//     document.getElementById('gain').valu 
+//    })
 
     const options = {
         method: 'GET',
@@ -13,13 +19,18 @@ export default function Calculator() {
         }
     };
     
-    fetch('https://fidelity-investments.p.rapidapi.com/v2/auto-complete?q=aapl', options)
+    fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-details?symbols=aapl', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
+    
+
   return (
     <div id="container">
+        <div id="gain">
+            Total Gain: 
+        </div>
         <table id="table_id" className="display absolute top-60">
             <thead>
                 <tr>
@@ -28,7 +39,9 @@ export default function Calculator() {
             </thead>
             <tbody>
                 <tr>
-                    <input id="stock">AAPL</input>
+                    Symbol<input id="stock"></input>
+                    Holdings<input id="holdings"></input>
+                    <button id="calcBtn">Calculate</button>
                 </tr>
             </tbody>
         </table>
