@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User } = require('../models/index');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
@@ -28,7 +28,7 @@ const resolvers = {
                 throw new AuthenticationError('No user with this login found.')
             }
 
-            const passwordAuth = await user.isCorrectPassword(password);
+            const passwordAuth = await user.checkPassword(password);
 
             if(!passwordAuth) {
                 throw new AuthenticationError('Incorrect Password.')
