@@ -17,10 +17,6 @@ export const options = {
 };
 
 export default function PieGraph() {
-    const style = {
-        position: 'absolute',
-        top: '80px'
-    }
     return (
         <Chart
             chartType="PieChart"

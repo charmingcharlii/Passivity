@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CalcEntry from './CalcEntry';
 
 export default function Calculator() {
     // let stockInput = document.getElementById("stock")
