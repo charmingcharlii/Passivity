@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const userSchema = require("./User");
+const stockSchema = require("./Stock");
 
 const portfolioSchema = new Schema(
     {
@@ -7,9 +8,9 @@ const portfolioSchema = new Schema(
             type: userSchema,
             required: true,
         },
-        // stocks: {
-        //     type: 
-        // },
+
+        stocks: [stockSchema],
+
         totalInvestment: {
             type: Number,
             required: true
