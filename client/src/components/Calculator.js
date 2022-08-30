@@ -1,67 +1,34 @@
-import React, { Component } from 'react';
-// import '../'
+import React from 'react';
+
 
 export default function Calculator() {
-
+    let stockInput = document.getElementById("stock")
     // fecth call for the stock itself 
-    const autoComplete = 
-    fetch('https://fidelity-investments.p.rapidapi.com/v2/auto-complete?q=apple', {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
-        }
-    })
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
 
-    //  fetch orders for corresponding stocks 
-    const orders = 
-    fetch('https://fidelity-investments.p.rapidapi.com/market/get-orders', {
+    const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+            'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
             'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
         }
-    })
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-        
-    //  fetch call for the sector of selected stock 
-    const sector = 
-    fetch('https://fidelity-investments.p.rapidapi.com/market/get-sectors', {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
-        }
-    })
+    };
+    
+    fetch('https://fidelity-investments.p.rapidapi.com/v2/auto-complete?q=aapl', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
   return (
-    <div>
-        <table id="table_id" class="display">
+    <div id="container">
+        <table id="table_id" className="display absolute top-60">
             <thead>
                 <tr>
                     <th>Stock</th>
-                    <th>Sector</th>
-                    <th>Orders</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{autoComplete}</td>
-                    <td>{sector}</td>
-                    <td>{orders}</td>
-                </tr>
-                <tr>
-                    <td>{autoComplete}</td>
-                    <td>{sector}</td>
-                    <td>{orders}</td>
+                    <input id="stock">AAPL</input>
                 </tr>
             </tbody>
         </table>
