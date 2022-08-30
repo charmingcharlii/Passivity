@@ -1,12 +1,12 @@
 const { Schema, model } = require("mongoose");
-const userSchema = require("./User");
 const stockSchema = require("./Stock");
 
 const portfolioSchema = new Schema(
     {
-        user: {
-            type: userSchema,
-            required: true,
+        userId: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true
         },
 
         stocks: [stockSchema],
