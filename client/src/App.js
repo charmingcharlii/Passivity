@@ -7,6 +7,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import Calculator from './components/Calculator';
 import Home from './components/Home';
+import PieGraph from './components/PieGraph'
 
 function App() {
   return (
@@ -29,9 +30,7 @@ function App() {
 
         {/* portfolio route */}
         <Route path='/portfolio' element={
-          <div>
-            <p>portfolio</p>
-          </div>
+          <PieGraph />
         } />
         <Route path='/calculator' element={
           <Calculator />
