@@ -3,6 +3,7 @@ const { User } = require('../models');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
+
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
@@ -18,6 +19,7 @@ const resolvers = {
             const token = signToken(user);
 
             return {token, user};
+
         }, 
         login: async (parent, { username, password }) => {
             const user = await User.findOne({ username });

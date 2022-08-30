@@ -16,7 +16,11 @@ export const options = {
     is3D: false,
 };
 
-export function PieGraph() {
+export default function PieGraph() {
+    const style = {
+        position: 'absolute',
+        top: '80px'
+    }
     return (
         <Chart
             chartType="PieChart"
@@ -24,6 +28,7 @@ export function PieGraph() {
             height="400px"
             data={data}
             options={options}
+            style={style}
         />
     );
 }
