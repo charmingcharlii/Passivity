@@ -19,8 +19,8 @@ const resolvers = {
 
             return {token, user};
         }, 
-        login: async (parent, { username, email, password }) => {
-            const user = await User.findOne({ username, email });
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
 
             if(!user) {
                 throw new AuthenticationError('No user with this login found.')
@@ -32,9 +32,10 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect Password.')
             }
 
-            // will need variable for token 
+            const token = signToken(user);
+            
+            return {token, user};
 
-            // returning token and user 
         }, 
         saveHolding: async (parent, {ticker, holding, value}) => {
             // honestly not super sure what we are trying to do here; assume this is pulling from the api? 
