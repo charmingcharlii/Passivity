@@ -47,3 +47,4 @@ userSchema.methods.checkPassword = async function (password) {
 const User = model("User", userSchema);
 
 module.exports = User;
+
