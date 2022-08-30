@@ -1,7 +1,8 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models');
+const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
-const { signToken } = require('../utils/auth')
+
 
 const resolvers = {
     Query: {
@@ -13,15 +14,15 @@ const resolvers = {
     }, 
 
     Mutation: {
-        addUser: async (parent, {name, email, password}) => {
-            const user = await User.create({ name, email, password })
-            // will need a variable that brings in the token from auth
-            const token = signToken(user)
-            // returning token and user 
-            return { token, user }
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
+            const token = signToken(user);
+
+            return {token, user};
+
         }, 
-        login: async (parent, { username, email, password }) => {
-            const user = await User.findOne({ username, email });
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ email });
 
             if(!user) {
                 throw new AuthenticationError('No user with this login found.')
@@ -33,10 +34,10 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect Password.')
             }
 
-            // will need variable for token 
-            const token = signToken(user)
-            // returning token and user 
-            return { token, user }
+            const token = signToken(user);
+            
+            return {token, user};
+
         }, 
         saveHolding: async (parent, {ticker, holding, value}) => {
             // honestly not super sure what we are trying to do here; assume this is pulling from the api? 
