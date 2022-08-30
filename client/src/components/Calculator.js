@@ -27,11 +27,11 @@ export default function Calculator() {
     
 
   return (
-    <div id="container">
+    <div id="container" className="">
         <div id="gain">
             Total Gain: 
         </div>
-        <table id="table_id" className="display absolute top-60">
+        <table id="table_id">
 
             <thead>
                 <tr>
