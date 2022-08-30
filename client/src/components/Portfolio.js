@@ -2,8 +2,18 @@ import PieGraph from "./PieGraph"
 import Calculator from "./Calculator"
 import CalcEntry from './CalcEntry';
 
+import { GET_USER } from '../utils/queries'
+import { useQuery } from '@apollo/client'
+import { useEffect, useState } from "react";
 
 const Portfolio = () => {
+    const [userInfo] = useQuery(GET_USER)
+    const [user, setUser] = useState()
+    useEffect(() => {
+        // setUser(userInfo())
+        console.log(user)
+    },[])
+
     return (
         <div className="flex items-center justify-center h-screen">
 
