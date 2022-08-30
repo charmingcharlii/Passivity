@@ -18,7 +18,7 @@ const Home = () => {
                         </div>
                         <div className="transform md:rounded-md  bg-white rotate-3 scale-110 translate-x-10 md:shadow-2xl -ml-4 -mt-44 p-12  space-y-2">
                             <div className="mx-auto">
-                                <img class="object-cover h-48 w-96 " src={logo} alt="Logo" />
+                                <img className="object-cover h-48 w-96 " src={logo} alt="Logo" />
                             </div>
                         </div>
                     </div>
