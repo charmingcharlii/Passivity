@@ -1,5 +1,12 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { 
+  ApolloProvider,
+  createHttpLink,
+  ApolloClient,
+  InMemoryCache } from '@apollo/client'
+import { setContext } from '@apollo/client/link/context';
+
 
 import Header from './components/Header';
 import LoginCard from './components/LoginCard';
@@ -9,8 +16,29 @@ import Calculator from './components/Calculator';
 import Home from './components/Home';
 import PieGraph from './components/PieGraph'
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers })=> {
+  let token = localStorage.getItem('id_token')
+
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    }
+  }
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+});
+
 function App() {
   return (
+    <ApolloProvider client={client}>
     <Router>
       <Header />
       <Routes>
@@ -41,6 +69,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </ApolloProvider>
   );
 }
 
