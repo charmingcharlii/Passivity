@@ -14,7 +14,6 @@ const typeDefs = gql`
     }
 
     type User {
-
         _id: ID!
         username: String!
         email: String!
@@ -33,7 +32,7 @@ const typeDefs = gql`
         user: User
     }
 
-    type Stocks: {
+    type Stocks {
         ticker: String!
         holding: Int!
         value: Int!
