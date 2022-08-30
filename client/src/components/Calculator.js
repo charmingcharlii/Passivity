@@ -24,28 +24,26 @@ export default function Calculator() {
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
-
-
-    return (
-        <div id="container">
-            <div id="gain">
-                Total Gain:
-            </div>
-            <table id="table_id" className="display absolute top-60">
-
-                <thead>
-                    <tr>
-                        <th>Stock</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        Symbol<input id="stock"></input>
-                        Holdings<input id="holdings"></input>
-                        <button id="calcBtn">Calculate</button>
-                    </tr>
-                </tbody>
-            </table>
+  return (
+    <div id="container">
+        <div id="gain">
+            Total Gain: 
         </div>
-    )
+        <table id="table_id">
+
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    Symbol<input id="stock"></input>
+                    Holdings<input id="holdings"></input>
+                    <button id="calcBtn">Calculate</button>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  )
 }

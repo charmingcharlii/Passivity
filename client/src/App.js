@@ -59,7 +59,7 @@ function App() {
         {/* portfolio route */}
         <Route path='/portfolio' element={
           <div>
-          <PieGraph />
+          {/* <PieGraph /> */}
           <Calculator />
           </div>
         } />
