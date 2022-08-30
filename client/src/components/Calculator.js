@@ -3,13 +3,13 @@ import React from 'react';
 
 export default function Calculator() {
     // let stockInput = document.getElementById("stock")
-//    let btn = document.getElementById('calcBtn')
+    //    let btn = document.getElementById('calcBtn')
 
-//    btn.addEventListener('click', function (){
-//     // let dividend = // this will be the data pulled in from the api 
-//     let holdings = document.getElementById('holdings').value;
-//     document.getElementById('gain').valu 
-//    })
+    //    btn.addEventListener('click', function (){
+    //     // let dividend = // this will be the data pulled in from the api 
+    //     let holdings = document.getElementById('holdings').value;
+    //     document.getElementById('gain').valu 
+    //    })
 
     const options = {
         method: 'GET',
@@ -18,16 +18,14 @@ export default function Calculator() {
             'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
         }
     };
-    
-    fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-details?symbols=aapl', options)
+
+    fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=aapl', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
-    
-
   return (
-    <div id="container" className="">
+    <div id="container">
         <div id="gain">
             Total Gain: 
         </div>

@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models/index');
-const { Portfolio } = require("../models/portfolio");
+const { Portfolio } = require("../models/");
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
@@ -43,15 +43,15 @@ const resolvers = {
         saveHolding: async (parent, {ticker, holding, value}, context) => {
 
             //Don't know if this is explicitly necessary but it makes sure the user is authenticated.
-            if(context.user) {
+            //if(context.user) {
 
                 const updatedPortfolio = Portfolio.findOneAndUpdate(
-                    { userId: context.user_id },
+                    { userId: context.user._id },
                     {$push: {
                         stocks: {
-                            ticker: ticker,
-                            holding: holding,
-                            value: value,
+                            ticker,
+                            holding,
+                            value
                         }
                     }},
                     {new: true}
@@ -59,9 +59,9 @@ const resolvers = {
                 
                 return updatedPortfolio;
 
-            }
+            //}
             
-            throw new AuthenticationError("Please log in first.");
+            //throw new AuthenticationError("Please log in first.");
 
         }
     }
