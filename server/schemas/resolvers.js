@@ -1,4 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
+const { User } = require('../models');
 // will need to import auth and User model 
 
 const resolvers = {

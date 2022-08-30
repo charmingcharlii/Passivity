@@ -7,10 +7,10 @@ const Header = () => {
             </Link>
         <nav className="inline-flex fixed right-0">
 
-                <Link to="/" className="w-fit m-4">Home</Link>
-                <Link to="/about" className="w-fit m-4">About</Link>
-                <Link to="/portfolio" className="w-fit m-4">My Portfolio</Link>
-                <Link to="/login" className="w-fit m-4">Login</Link>
+                <Link to="/" className="w-fit m-4 hover:text-slate-500">Home</Link>
+                <Link to="/about" className="w-fit m-4 hover:text-slate-500">About</Link>
+                <Link to="/portfolio" className="w-fit m-4 hover:text-slate-500">My Portfolio</Link>
+                <Link to="/login" className="w-fit m-4 hover:text-slate-500">Login</Link>
 
         </nav>
     </header>
