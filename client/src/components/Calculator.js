@@ -32,6 +32,7 @@ export default function Calculator() {
             Total Gain: 
         </div>
         <table id="table_id" className="display absolute top-60">
+
             <thead>
                 <tr>
                     <th>Stock</th>
