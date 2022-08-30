@@ -1,67 +1,48 @@
-import React, { Component } from 'react';
-// import '../'
+import React from 'react';
+
 
 export default function Calculator() {
+    // let stockInput = document.getElementById("stock")
+//    let btn = document.getElementById('calcBtn')
 
-    // fecth call for the stock itself 
-    const autoComplete = 
-    fetch('https://fidelity-investments.p.rapidapi.com/v2/auto-complete?q=apple', {
+//    btn.addEventListener('click', function (){
+//     // let dividend = // this will be the data pulled in from the api 
+//     let holdings = document.getElementById('holdings').value;
+//     document.getElementById('gain').valu 
+//    })
+
+    const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+            'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
             'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
         }
-    })
+    };
+    
+    fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-details?symbols=aapl', options)
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
-    //  fetch orders for corresponding stocks 
-    const orders = 
-    fetch('https://fidelity-investments.p.rapidapi.com/market/get-orders', {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
-        }
-    })
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-        
-    //  fetch call for the sector of selected stock 
-    const sector = 
-    fetch('https://fidelity-investments.p.rapidapi.com/market/get-sectors', {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
-        }
-    })
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+    
 
   return (
-    <div>
-        <table id="table_id" className="display">
+    <div id="container">
+        <div id="gain">
+            Total Gain: 
+        </div>
+        <table id="table_id" className="display absolute top-60">
+
             <thead>
                 <tr>
                     <th>Stock</th>
-                    <th>Sector</th>
-                    <th>Orders</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{autoComplete}</td>
-                    <td>{sector}</td>
-                    <td>{orders}</td>
-                </tr>
-                <tr>
-                    <td>{autoComplete}</td>
-                    <td>{sector}</td>
-                    <td>{orders}</td>
+                    Symbol<input id="stock"></input>
+                    Holdings<input id="holdings"></input>
+                    <button id="calcBtn">Calculate</button>
                 </tr>
             </tbody>
         </table>
