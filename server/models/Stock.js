@@ -1,20 +1,26 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
-const stockSchema = new Schema({
-    ticker: {
-        type: String,
-        required: true,
-    },
-    units: {
-        type: Number,
-        required: true
-    },
-    priceAvg: {
-        type: Number,
-        required: true
+const stockSchema = new Schema(
+    {
+        ticker: {
+            type: String,
+            required: true,
+            unique: true
+        },
+
+        holding: {
+            type: Number,
+            required: true,
+        },
+
+        value: {
+            type: Number,
+            required: true
+        }
+
     }
-});
+);
 
-const Stock = model('Stock', stockSchema)
+const Stocks = model("Stocks", stockSchema);
 
-module.exports = Stock
+module.exports = Stocks;
