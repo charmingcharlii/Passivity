@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useMutation } from '@apollo/client'
-import { LOGIN } from "../utils/mutations"
+import { LOGIN, ADD_USER } from "../utils/mutations"
 import AuthService from '../utils/auth'
 
 const LoginForm = () => {
@@ -11,7 +11,9 @@ const LoginForm = () => {
     const [ name, setName ] = useState('')
     const [ password, setPassword ] = useState('')
 
-    const [login, { error }] = useMutation(LOGIN);
+    const [login] = useMutation(LOGIN);
+
+    const [addUser] = useMutation(ADD_USER)
 
     const loginHandler = async (e) => {
         e.preventDefault()
@@ -24,7 +26,6 @@ const LoginForm = () => {
                 }
             })
             const token = mutationResponse.data.login.token;
-            console.log(token)
             // add auth function
             AuthService.login(token)
         }
@@ -36,16 +37,27 @@ const LoginForm = () => {
         setPassword('')
     }
 
-    const createAccountHandler = (e) => {
+    const createAccountHandler = async (e) => {
         e.preventDefault()
-        let newUser = {
-            name,
-            email,
-            password
-        }
-        console.log(newUser)
         // mutation for newAccount TODO
+        try {
+            const mutationResponse = await addUser({
+                variables: {
+                    username: name,
+                    email,
+                    password
+                }
+            });
+            // grab token from addUser response
+            const token = mutationResponse.data.addUser.token;
 
+            console.log(token)
+            // add auth function
+            AuthService.login(token)
+        }
+        catch (err){
+            console.error(err)
+        }
         setEmail('')
         setName('')
         setPassword('')

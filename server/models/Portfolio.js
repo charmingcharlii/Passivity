@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const stockSchema = require("./Stock");
+// const stockSchema = require("./Stock");
 
 const portfolioSchema = new Schema(
     {
@@ -9,7 +9,7 @@ const portfolioSchema = new Schema(
             required: true
         },
 
-        stocks: [stockSchema],
+        // stocks: [stockSchema],
 
         totalInvestment: {
             type: Number,
