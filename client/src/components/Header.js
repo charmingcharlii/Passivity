@@ -1,6 +1,12 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import AuthService from '../utils/auth'
 const Header = () => {
+
+  useEffect(() => {
+    console.log(AuthService.loggedIn())
+  }, [])
+
   return (
     <header className="bg-slate-300 h-16 w-full fixed">
             <Link to="/">
@@ -11,7 +17,8 @@ const Header = () => {
                 <Link to="/" className="w-fit m-4 hover:text-slate-500">Home</Link>
                 <Link to="/about" className="w-fit m-4 hover:text-slate-500">About</Link>
                 <Link to="/portfolio" className="w-fit m-4 hover:text-slate-500">My Portfolio</Link>
-                <Link to="/login" className="w-fit m-4 hover:text-slate-500">Login</Link>
+                {AuthService.loggedIn() ? <p onClick={() => AuthService.logout()} className="w-fit m-4 hover:text-slate-500 hover:cursor-pointer">Logout</p> 
+                : <Link to="/login" className="w-fit m-4 hover:text-slate-500">Login</Link>}
 
         </nav>
     </header>

@@ -44,7 +44,7 @@ export default function Calculator() {
 
   return (
     <div>
-        <table id="table_id" class="display">
+        <table id="table_id" className="display">
             <thead>
                 <tr>
                     <th>Stock</th>
