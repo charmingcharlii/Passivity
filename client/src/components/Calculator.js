@@ -2,18 +2,45 @@ import React, { Component } from 'react';
 // import '../'
 
 export default function Calculator() {
-    // const options = {
-    //     method: 'GET',
-    //     headers: {
-    //         'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
-    //         'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
-    //     }
-    // };
-    // const autoComplete = 
-    // fetch('https://fidelity-investments.p.rapidapi.com/v2/auto-complete?q=apple', options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //     .catch(err => console.error(err));
+
+    // fecth call for the stock itself 
+    const autoComplete = 
+    fetch('https://fidelity-investments.p.rapidapi.com/v2/auto-complete?q=apple', {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
+        }
+    })
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+
+    //  fetch orders for corresponding stocks 
+    const orders = 
+    fetch('https://fidelity-investments.p.rapidapi.com/market/get-orders', {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
+        }
+    })
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+        
+    //  fetch call for the sector of selected stock 
+    const sector = 
+    fetch('https://fidelity-investments.p.rapidapi.com/market/get-sectors', {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY',
+            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
+        }
+    })
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
 
   return (
     <div>
@@ -21,17 +48,20 @@ export default function Calculator() {
             <thead>
                 <tr>
                     <th>Stock</th>
-                    <th>Column 2</th>
+                    <th>Sector</th>
+                    <th>Orders</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
+                    <td>{autoComplete}</td>
+                    <td>{sector}</td>
+                    <td>{orders}</td>
                 </tr>
                 <tr>
-                    {/* <td>{autoComplete}</td> */}
-                    <td>Row 2 Data 2</td>
+                    <td>{autoComplete}</td>
+                    <td>{sector}</td>
+                    <td>{orders}</td>
                 </tr>
             </tbody>
         </table>
