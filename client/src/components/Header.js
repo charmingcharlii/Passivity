@@ -1,11 +1,6 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import AuthService from '../utils/auth'
 const Header = () => {
-
-  useEffect(() => {
-    console.log(AuthService.loggedIn())
-  }, [])
 
   return (
     <header className="bg-slate-300 h-16 w-full fixed">
