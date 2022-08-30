@@ -5,6 +5,7 @@ import Header from './components/Header';
 import LoginCard from './components/LoginCard';
 import About from './components/About';
 import Footer from './components/Footer';
+import Calculator from './components/Calculator';
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
           <div>
             <p>portfolio</p>
           </div>
+        } />
+        <Route path='/calculator' element={
+          <Calculator />
         } />
       </Routes>
       <Footer />
