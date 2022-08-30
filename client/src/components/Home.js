@@ -1,3 +1,5 @@
+import logo from "../assets/PassivityLogo.png"
+
 const Home = () => {
     return (
         <div className="flex items-center justify-center h-screen">
@@ -15,7 +17,8 @@ const Home = () => {
                         <div className="transform md:rounded-md absolute bg-slate-300 transform -translate-x-10 relative h-64">
                         </div>
                         <div className="transform md:rounded-md  bg-white rotate-3 scale-110 translate-x-10 md:shadow-2xl -ml-4 -mt-44 p-12  space-y-2">
-                            <div className="px-4 sm:px-0 grid grid-cols-5 sm:grid-cols-4 gap-2 sm:gap-8 max-w-5xl mx-auto">
+                            <div className="mx-auto">
+                                <img class="object-cover h-48 w-96 " src={logo} alt="Logo" />
                             </div>
                         </div>
                     </div>
