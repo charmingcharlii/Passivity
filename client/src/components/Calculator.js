@@ -28,7 +28,7 @@ export default function Calculator() {
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
-        
+
     //  fetch call for the sector of selected stock 
     const sector = 
     fetch('https://fidelity-investments.p.rapidapi.com/market/get-sectors', {
@@ -47,7 +47,7 @@ export default function Calculator() {
         <table id="table_id" class="display">
             <thead>
                 <tr>
-                    <th>Stock</th>
+                    <th>Stocks</th>
                     <th>Sector</th>
                     <th>Orders</th>
                 </tr>
