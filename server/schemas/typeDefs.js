@@ -1,7 +1,7 @@
 const { gql } = require("apollo-server-express");
 
 
-//TODO: This is a WIP. Figure out final structure. saveHolding needs to be tweaked.
+//TODO: This is a WIP. Figure out final structure.
 const typeDefs = gql`
     type Query {
         me: User
@@ -10,7 +10,7 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(username: String!, email: String!, password: String!): Auth
-        saveHolding(ticker: String!, holding: Int!, value: Int!): Stocks
+        saveHolding( holdingData: StockInput! ): Portfolio
     }
 
     type User {
@@ -39,6 +39,11 @@ const typeDefs = gql`
         value: Int!
     }
 
+    input StockInput {
+        ticker: String!
+        holding: Int!
+        value: Int!
+    }
 `;
 
 module.exports = typeDefs;

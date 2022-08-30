@@ -9,8 +9,15 @@ const stockSchema = new Schema(
         },
 
         holding: {
-            
+            type: Number,
+            required: true,
+        },
+
+        value: {
+            type: Number,
+            required: true
         }
+
     }
 );
 
