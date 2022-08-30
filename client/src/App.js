@@ -5,6 +5,8 @@ import Header from './components/Header';
 import LoginCard from './components/LoginCard';
 import About from './components/About';
 import Footer from './components/Footer';
+import Calculator from './components/Calculator';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -13,9 +15,7 @@ function App() {
       <Routes>
         {/* landing route */}
         <Route path='/' element={
-          <div>
-            <p>home</p>
-          </div>
+          <Home />
         } />
 
         <Route path="/login" element={
@@ -32,6 +32,9 @@ function App() {
           <div>
             <p>portfolio</p>
           </div>
+        } />
+        <Route path='/calculator' element={
+          <Calculator />
         } />
       </Routes>
       <Footer />
