@@ -19,10 +19,10 @@ export default function Calculator() {
         }
     };
 
-    fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=aapl', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+    // fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=aapl', options)
+    //     .then(response => response.json())
+    //     .then(response => console.log(response))
+    //     .catch(err => console.error(err));
 
     return (
         <div id="container">
