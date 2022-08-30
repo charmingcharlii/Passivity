@@ -6,6 +6,7 @@ const Header = () => {
               <h1 className="text-5xl font-extrabold m-2 inline">Passivity</h1>
             </Link>
         <nav className="inline-flex fixed right-0">
+                <Link to="/" className="w-fit m-4">Home</Link>
                 <Link to="/about" className="w-fit m-4">About</Link>
                 <Link to="/portfolio" className="w-fit m-4">My Portfolio</Link>
                 <Link to="/login" className="w-fit m-4">Login</Link>
