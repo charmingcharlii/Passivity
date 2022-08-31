@@ -1,8 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Stock } = require('../models/');
+const { User, Stocks } = require('../models/');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
-
 
 const resolvers = {
     Query: {
@@ -63,7 +62,7 @@ const resolvers = {
         saveHolding: async (parent, {holdingData}, context) => {
 
             if(context.user) {
-                const stock = await Stock.create({
+                const stock = await Stocks.create({
                             ticker: holdingData.ticker,
                             holding: holdingData.holding,
                             value: holdingData.value
@@ -84,16 +83,26 @@ const resolvers = {
 
         },
 
+        //Used for removing 
         removeHolding: async (parent, ticker, context) => {
 
             if(context.user) {
 
-                const stock = await Stock.findOneAndDelete(
-                    { ticker: ticker},
-                    
+                const stock = await Stocks.findOne(
+                    {ticker: ticker}
                 )
 
+                const updateUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pop: { userPortfolio: stock }},
+                    { new: true }
+                )
+
+                return updateUser;
+
             }
+
+            throw new AuthenticationError("Please log in first.");
 
         }
 

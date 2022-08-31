@@ -11,7 +11,7 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         login(username: String!, password: String!): Auth
         saveHolding( holdingData: StockInput! ): User
-        removeHolding( ticker: String!): Stock
+        removeHolding( ticker: String!): Stocks
         updateUser(username: String!, email: String!, password: String!): User
 
     }
