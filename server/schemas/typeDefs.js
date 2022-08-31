@@ -18,13 +18,6 @@ const typeDefs = gql`
         username: String!
         email: String!
         userPortfolio: [Stocks]
-
-    }
-
-    type Portfolio {
-        user: User
-        stocks: [ Stocks ]
-        totalInvestment: Int!
     }
 
     type Auth {
@@ -46,3 +39,9 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// type Portfolio {
+//     user: User
+//     stocks: [ Stocks ]
+//     totalInvestment: Int!
+// }
