@@ -29,7 +29,7 @@ export default function Calculator() {
             <div id="gain">
                 Total Gain:
             </div>
-            <table id="table_id">
+            {/* <table id="table_id">
 
                 <thead>
                     <tr>
@@ -43,7 +43,7 @@ export default function Calculator() {
                         <button id="calcBtn"> Calculate </button>
                     </tr>
                 </tbody>
-            </table>
+            </table> */}
         </div>
     )
 }
