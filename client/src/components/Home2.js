@@ -4,7 +4,7 @@ import './style.css';
 
 const Home = () => {
     return (
-        <div class="container pt-48">
+        <div class="container pt-[20px]">
 
             <header className=" home2 md:rounded-md p-12 border border-indigo-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 mx-auto  items-center max-w-6xl mx-auto md:rounded-md">
