@@ -11,18 +11,18 @@ export default function Calculator() {
     //     document.getElementById('gain').valu 
     //    })
 
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
-            'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
-        }
-    };
+    // const options = {
+    //     method: 'GET',
+    //     headers: {
+    //         'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
+    //         'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
+    //     }
+    // };
 
-    fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=aapl', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+    // fetch('https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=aapl', options)
+    //     .then(response => response.json())
+    //     .then(response => console.log(response))
+    //     .catch(err => console.error(err));
 
     return (
         <div id="container">
