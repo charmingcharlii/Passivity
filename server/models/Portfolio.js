@@ -3,11 +3,12 @@ const stockSchema = require("./Stock");
 
 const portfolioSchema = new Schema(
     {
-        // stocks: [stockSchema],
+        stocks: [stockSchema],
 
         totalInvestment: {
             type: Number,
-            required: true
+            required: true,
+            default: 0
         }
 
     }

@@ -4,8 +4,7 @@ const stockSchema = new Schema(
     {
         ticker: {
             type: String,
-            required: true,
-            unique: true
+            required: true
         },
 
         holding: {
