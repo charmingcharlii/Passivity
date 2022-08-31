@@ -25,7 +25,11 @@ const CalcEntry = ({ symbol, holding }) => {
       .then(response => response.json())
       .then(data => {
         let testData = data;
-        console.log(testData.mashup.dividend.dividendDetails.dividendDetail[0].equityDetail.payoutRatioTTM);
+        // data from api call
+        let averageStockPrice = testData.mashup.dividend.dividendDetails.dividendDetail[0].equityDetail.payoutRatioTTM
+        let shares = 5 //input from user 
+        let base = shares*averageStockPrice
+        console.log(base)
       });
 
   }
@@ -35,19 +39,6 @@ const CalcEntry = ({ symbol, holding }) => {
   }
 
   runFetchResponse();
-  // let fetchResponse = fetch(symbolQuery, options)
-  //   .then(response => response.json())
-  //   .then((response) => { return response })
-  //   // response.mashup.dividend.dividendDetails.dividendDetail.equityDetail.payoutRatioMRQ})
-  //   .catch(err => console.error(err));
-
-  // info from api call 
-  let shares = 5 //input from user 
-  //let averageStockPrice = fetchResponse.mashup.valuation.valuationDetails.valuationDetail.equityDetail.priceToBookTTM
-  // let mktPrice = 'info from call'
-  // let base = shares*averageStockPrice
-  // let mktValue = shares*mktPrice
-  // console.log(fetchResponse)
 
   return (
     <div className="border-black border-2 w-full h-auto flex justify-between">
