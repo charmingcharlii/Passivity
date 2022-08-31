@@ -10,21 +10,19 @@ const typeDefs = gql`
     type Mutation {
         addUser(username: String!, email: String!, password: String!): Auth
         login(username: String!, password: String!): Auth
-        saveHolding( holdingData: StockInput! ): Portfolio
+        saveHolding( holdingData: StockInput! ): User
+        removeHolding( ticker: String!): Stocks
+        updateUser(username: String!, email: String!, password: String!): User
+
     }
 
     type User {
         _id: ID!
         username: String!
         email: String!
-        userPortfolio: Portfolio
+        userPortfolio: [Stocks]
 
-    }
 
-    type Portfolio {
-        user: User
-        stocks: [ Stocks ]
-        totalInvestment: Int!
     }
 
     type Auth {
@@ -46,3 +44,9 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// type Portfolio {
+//     user: User
+//     stocks: [ Stocks ]
+//     totalInvestment: Int!
+// }

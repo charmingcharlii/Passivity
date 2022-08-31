@@ -12,7 +12,7 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    constext: authMiddleware
+    context: authMiddleware
 })
 
 app.use(express.urlencoded({ extended: false }));
@@ -29,9 +29,10 @@ const startApolloServer = async (typeDefs, resolvers) => {
     db.once("open", () => {
         app.listen(PORT, () => {
             console.log(`API server running on port ${PORT}!`);
+            console.log(`GraphQL available at: http://localhost:${PORT}${server.graphqlPath}`);
         })
     });
     
 }
 
-startApolloServer(typeDefs, resolvers);
+startApolloServer();

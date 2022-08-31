@@ -1,27 +1,28 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models/index');
-const { Portfolio } = require("../models/");
+const { User, Stocks } = require('../models/');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
-
 
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if(context.user) {
-                return User.findOne({_id: context.user._id})
+                return User.findById(context.user._id).populate('userPortfolio')
             }
         }
     }, 
 
     Mutation: {
+
         addUser: async (parent, args) => {
             const user = await User.create(args);
+
             const token = signToken(user);
 
             return {token, user};
 
         }, 
+
         login: async (parent, { username, password }) => {
             const user = await User.findOne({ username });
 
@@ -34,36 +35,79 @@ const resolvers = {
             if(!passwordAuth) {
                 throw new AuthenticationError('Incorrect Password.')
             }
-
             const token = signToken(user);
             
             return {token, user};
 
-        }, 
-        saveHolding: async (parent, {ticker, holding, value}, context) => {
+        },
 
-            //Don't know if this is explicitly necessary but it makes sure the user is authenticated.
-            //if(context.user) {
+        updateUser: async (parent, {username, email, password}, context) => {
+            
+            if (context.user) {
 
-                const updatedPortfolio = Portfolio.findOneAndUpdate(
-                    { userId: context.user._id },
+                const user = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { email: email, username: username, password: password },
+                    { new: true }
+                );
+
+                return user;
+
+            }
+
+            throw new AuthenticationError("You must be logged in.");
+
+        },
+
+        saveHolding: async (parent, {holdingData}, context) => {
+
+
+            if(context.user) {
+
+                const stock = {
+                            ticker: holdingData.ticker,
+                            holding: holdingData.holding,
+                            value: holdingData.value
+                }
+                const updatedPortfolio = User.findOneAndUpdate(
+                    { _id: context.user._id },
                     {$push: {
-                        stocks: {
-                            ticker,
-                            holding,
-                            value
-                        }
+                        userPortfolio: stock
                     }},
                     {new: true}
                 );
                 
                 return updatedPortfolio;
 
-            //}
+            }
             
-            //throw new AuthenticationError("Please log in first.");
+            throw new AuthenticationError("Please log in first.");
+
+        },
+
+        //Used for removing 
+        removeHolding: async (parent, ticker, context) => {
+
+            if(context.user) {
+
+                const stock = await Stocks.findOne(
+                    {ticker: ticker}
+                )
+
+                const updateUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pop: { userPortfolio: stock }},
+                    { new: true }
+                )
+
+                return updateUser;
+
+            }
+
+            throw new AuthenticationError("Please log in first.");
 
         }
+
     }
 };
 
