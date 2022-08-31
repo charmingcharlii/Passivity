@@ -1,8 +1,8 @@
 const About = () => {
     return (
-        <div className="flex items-center justify-center h-screen ">
+        <div className="flex items-center justify-center">
 
-            <div className=" border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
+            <div className="border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
 
                 <div className="p-4 text-gray-600">
                     <h1 className="mb-8 text-center text-3xl font-bold text-indigo-900">What we do :</h1>
