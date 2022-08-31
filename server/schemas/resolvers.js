@@ -7,7 +7,7 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if(context.user) {
-                return User.findById(context.user._id)
+                return User.findById(context.user._id).populate('userPortfolio')
             }
         }
     }, 
@@ -61,7 +61,9 @@ const resolvers = {
 
         saveHolding: async (parent, {holdingData}, context) => {
 
+
             if(context.user) {
+
                 const stock = await Stocks.create({
                             ticker: holdingData.ticker,
                             holding: holdingData.holding,
