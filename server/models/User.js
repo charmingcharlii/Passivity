@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const stockSchema = require('./Stock')
 
 
 //TODO: Add portfolio to user. Check password encryption.
@@ -23,10 +24,7 @@ const userSchema = new Schema(
             required: true
         },
 
-        userPortfolio: [{
-            type: Schema.Types.ObjectId,
-            ref: 'Stocks'
-        }]
+        userPortfolio: [stockSchema]
 
     },
     {
