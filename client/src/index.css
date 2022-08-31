@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+.nav-slider {
+  position: absolute;
+  background-color: bisque;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
