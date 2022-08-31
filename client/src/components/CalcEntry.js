@@ -1,4 +1,5 @@
-const CalcEntry = () => {
+
+const CalcEntry = ({ symbol, holding }) => {
 
   // creates the fetch call from user input 
   let symbol = 'AAPL' // will be user input 
@@ -16,10 +17,13 @@ const CalcEntry = () => {
   .then(response => console.log(response))
   .catch(err => console.error(err));
 
-
-
   return (
-    <div>CalcEntry</div>
+    <div className="border-black border-2 w-full h-auto flex justify-between">
+      <p className="grow">Symbol: {symbol}</p>
+      <p className="grow">Holdings: {holding}</p>
+      <button className="grow">Edit</button>
+
+    </div>
   )
 }
 
