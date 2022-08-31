@@ -5,6 +5,7 @@ const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
 const resolvers = {
+
     Query: {
         me: async (parent, args, context) => {
             if(context.user) {
@@ -86,17 +87,24 @@ const resolvers = {
 
         },
 
-        updateHolding: async (parent, {holdingData}, context) => {
+        // updateHolding: async (parent, {ticker, holding, value}, context) => {
+            
+        //     if (context.user) {
+            
+        //         const stock = await Stocks.findOne(
+        //             {ticker: ticker}
+        //         );
 
-            const updatedStock = await findOneAndUpdate({
-                ticker: holdingData.ticker,
-                holding: holdingData.holding,
-                value: holdingData.value
-            })
+        //         const updateStock = await User.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             {$where: { stock: stock { $set: { holding: holding, value: value }}},
+        //             { new: true }
+        //         )
+                
+        //         return updateStock;
 
-            const updatedPortfolio = await User.findOneAndReplace()
-
-        },
+        //     }
+        // },
 
         //Used for removing 
         removeHolding: async (parent, ticker, context) => {
