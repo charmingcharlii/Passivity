@@ -1,70 +1,54 @@
 import logo from "../assets/PassivityLogo.png"
+// Component's Base CSS
+import './style.css';
 
 const Home = () => {
     return (
-        <>
-            <main>
-                <div class="container container-main">
-                    <section class="section section-one">
-                        <img
-                            class="section-image section-image-1"
-                            src="images/illustration-grow-together.svg"
-                            alt="A sketched man and woman wearing black and grey while standing on opposite sides"
-                        />
-                        <div class="section-text">
-                            <h2 class="section-title">Grow Together</h2>
-                            <p class="section-paragraph">
-                                Generate meaningful discussions with our audience and build a
-                                strong, loyal community. Think of the insightful conversations you
-                                miss out on with a feedback form.
-                            </p>
+        <div class="container pt-48">
+
+            <header className=" home2 md:rounded-md p-12 border border-indigo-200">
+                <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 mx-auto  items-center max-w-6xl mx-auto md:rounded-md">
+                    <div className="px-4">
+                        <h3 className="text-4xl pr-6 sm:leading-snug tracking-tight font-bold text-black md:rounded-md ">
+                            We know investing can sometimes feel like a really hard 🧩.
+                        </h3>
+                        <p className="md:rounded-md mt-4 text-stone-800 text-xl font-medium">
+                            Here at passivity we feel that, investing doesn’t have to be that hard!
+                        </p>
+                    </div>
+                    <div className=" ">
+                        <div className=" border border-indigo-200 transform md:rounded-md absolute bg-slate-300 transform -translate-x-10 relative h-64 ">
                         </div>
-                    </section>
 
-                    <section class="section section-two">
-                        <img
-                            class="section-image section-image-2"
-                            src="images/illustration-flowing-conversation.svg"
-                            alt="A sketched group of people sitting on a table in the nature and having a conversation"
-                        />
-
-                        <div class="section-text section-text-opposite">
-                            <h2 class="section-title">Flowing Converstations</h2>
-                            <p class="section-paragraph">
-                                You wouldn't paginate a conversation in real life, so why do it
-                                online? Our threads have just-in-time loading for a more natural
-                                flow.
-                            </p>
+                        <div className=" border border-indigo-200 transform md:rounded-md bg-white rotate-3 scale-110 translate-x-10 md:shadow-2xl -ml-4 -mt-44 p-12 space-y-2">
+                            <div className="mx-auto">
+                                <img className="object-cover h-48 w-96 " src={logo} alt="Logo" />
+                            </div>
                         </div>
-                    </section>
-
-                    <section class="section section-three">
-                        <img
-                            class="section-image section-image-3"
-                            src="images/illustration-your-users.svg"
-                            alt="Three sketched people each of them standing next to a speech box"
-                        />
-                        <div class="section-text">
-                            <h2 class="section-title">Your Users</h2>
-                            <p class="section-paragraph">
-                                It takes no time at all to integrate Huddle with your app's
-                                authentication solution. This means, once signed in to your app,
-                                your users can start chatting immediately.
-                            </p>
-                        </div>
-                    </section>
-
-                    <section class="section-4">
+                    </div>
+                </div >
+                <div class="flex items-center justify-center pt-16 pb-16 ">
+                    <section class="section-4 border border-indigo-200">
                         <div class="section-bottom">
-                            <h2 class="section-bottom-title">Ready To Build Your Community?</h2>
-                            <a class="btn section-btn" href="#">Get Started For Free</a>
+                            <h2 class="section-bottom-title">Ready To Join our Community?</h2>
+                            <a class="bg-purple-500 btn section-btn" href="#">Sign Up For Free</a>
                         </div>
                     </section>
                 </div>
+            </header>
+            <main>
+                {/* <div class="flex items-center justify-center pb-32">
+                    <section class="section-4">
+                        <div class="section-bottom">
+                            <h2 class="section-bottom-title">Ready To Join our Community?</h2>
+                            <a class="btn section-btn" href="#">Sign Up For Free</a>
+                        </div>
+                    </section>
+                </div> */}
             </main>
 
 
-        </>
+        </div>
     )
 }
 

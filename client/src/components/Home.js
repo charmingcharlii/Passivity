@@ -21,6 +21,7 @@ const Home = () => {
                             <div className="mx-auto">
                                 <img className="object-cover h-48 w-96 " src={logo} alt="Logo" />
                             </div>
+
                         </div>
                     </div>
                 </div >

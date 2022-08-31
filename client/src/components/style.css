@@ -125,13 +125,12 @@
   .section-btn,
   .title-btn {
     font-size: 0.925rem;
-    background: hsl(322, 100%, 66%);
     padding: 0.75em 2em;
     align-self: center;
   }
   
   .header-btn {
-    background: #fff;
+    background: rgb(169, 168, 168);
     font-size: 0.8rem;
     padding: 0.25em 1.75em;
     box-shadow: 0 0 3px #c5c4c4;
@@ -174,8 +173,12 @@
   ============= */
   
   header {
-    background: hsl(193, 100%, 96%);
-    background-image: url(images/bg-hero-mobile.svg);
+    background: hsl(210, 8%, 95%);
+  }
+
+  .home2{
+    background: hsl(210, 8%, 95%);
+    border-radius: 15px; 
   }
   
   footer {
