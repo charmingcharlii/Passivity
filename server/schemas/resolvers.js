@@ -82,6 +82,19 @@ const resolvers = {
             
             throw new AuthenticationError("Please log in first.");
 
+        },
+
+        removeHolding: async (parent, ticker, context) => {
+
+            if(context.user) {
+
+                const stock = await Stock.findOneAndDelete(
+                    { ticker: ticker},
+                    
+                )
+
+            }
+
         }
 
     }
