@@ -1,6 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models/index');
-const { Portfolio } = require("../models/");
+const { User, Stock } = require('../models/');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
@@ -17,6 +16,7 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, args) => {
             const user = await User.create(args);
+
             const token = signToken(user);
 
             return {token, user};
@@ -39,19 +39,19 @@ const resolvers = {
             return {token, user};
 
         }, 
-        saveHolding: async (parent, {ticker, holding, value}, context) => {
+        saveHolding: async (parent, {holdingData}, context) => {
 
             //Don't know if this is explicitly necessary but it makes sure the user is authenticated.
             //if(context.user) {
-
-                const updatedPortfolio = Portfolio.findOneAndUpdate(
-                    { userId: context.user._id },
+                const stock = await Stock.create({
+                            ticker: holdingData.ticker,
+                            holding: holdingData.holding,
+                            value: holdingData.value
+                })
+                const updatedPortfolio = User.findOneAndUpdate(
+                    { _id: context.user._id },
                     {$push: {
-                        stocks: {
-                            ticker,
-                            holding,
-                            value
-                        }
+                        userPortfolio: stock
                     }},
                     {new: true}
                 );

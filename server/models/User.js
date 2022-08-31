@@ -21,7 +21,12 @@ const userSchema = new Schema(
         password: {
             type: String,
             required: true
-        }
+        },
+
+        userPortfolio: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Stock'
+        }]
 
     },
     {
