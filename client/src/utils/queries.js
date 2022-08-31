@@ -4,17 +4,15 @@ import { gql } from '@apollo/client'
 
 export const GET_USER = gql`
 query Query {
-    me {
-      username
-      email
-      userPortfolio {
-        stocks {
-          ticker
-          holding
-          value
-        }
-        totalInvestment
-      }
+  me {
+    userPortfolio {
+      ticker
+      holding
+      value
     }
+    _id
+    username
+    email
   }
+}
 `

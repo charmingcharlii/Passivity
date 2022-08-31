@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Stock } = require('../models/');
+const { User, Stocks } = require('../models/');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
@@ -8,7 +8,7 @@ const resolvers = {
     Query: {
         me: async (parent, args, context) => {
             if(context.user) {
-                return User.findById(context.user._id)
+                return User.findById(context.user._id).populate('userPortfolio')
             }
         }
     }, 
@@ -62,8 +62,8 @@ const resolvers = {
 
         saveHolding: async (parent, {holdingData}, context) => {
 
-            if(context.user) {
-                const stock = await Stock.create({
+            //if(context.user) {
+                const stock = await Stocks.create({
                             ticker: holdingData.ticker,
                             holding: holdingData.holding,
                             value: holdingData.value
