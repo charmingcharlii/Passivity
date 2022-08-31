@@ -1,3 +1,4 @@
+
 const CalcEntry = ({ symbol, holding }) => {
 
   // creates the fetch call from user input 
@@ -23,7 +24,6 @@ const CalcEntry = ({ symbol, holding }) => {
   // let base = shares*averageStockPrice
   // let mktValue = shares*mktPrice
   // console.log(shares)
-
 
   return (
     <div className="border-black border-2 w-full h-auto flex justify-between">
