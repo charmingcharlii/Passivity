@@ -3,7 +3,6 @@ const { User, Stocks } = require('../models/');
 const { signToken } = require("../utils/auth");
 // will need to import auth and User model 
 
-
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
@@ -62,7 +61,9 @@ const resolvers = {
 
         saveHolding: async (parent, {holdingData}, context) => {
 
-            //if(context.user) {
+
+            if(context.user) {
+
                 const stock = await Stocks.create({
                             ticker: holdingData.ticker,
                             holding: holdingData.holding,
@@ -80,6 +81,29 @@ const resolvers = {
 
             }
             
+            throw new AuthenticationError("Please log in first.");
+
+        },
+
+        //Used for removing 
+        removeHolding: async (parent, ticker, context) => {
+
+            if(context.user) {
+
+                const stock = await Stocks.findOne(
+                    {ticker: ticker}
+                )
+
+                const updateUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $pop: { userPortfolio: stock }},
+                    { new: true }
+                )
+
+                return updateUser;
+
+            }
+
             throw new AuthenticationError("Please log in first.");
 
         }
