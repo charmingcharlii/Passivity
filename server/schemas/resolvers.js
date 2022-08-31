@@ -64,11 +64,11 @@ const resolvers = {
 
             if(context.user) {
 
-                const stock = await Stocks.create({
+                const stock = {
                             ticker: holdingData.ticker,
                             holding: holdingData.holding,
                             value: holdingData.value
-                })
+                }
                 const updatedPortfolio = User.findOneAndUpdate(
                     { _id: context.user._id },
                     {$push: {
