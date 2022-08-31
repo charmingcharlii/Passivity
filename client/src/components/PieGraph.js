@@ -19,8 +19,8 @@ export default function PieGraph() {
     return (
         <Chart
             chartType="PieChart"
-            // width="100%"
-            // height="auto"
+            width="auto"
+            height="auto"
             data={data}
             options={options}
         />
