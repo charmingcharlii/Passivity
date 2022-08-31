@@ -1,7 +1,7 @@
 import PieGraph from "./PieGraph"
 import Calculator from "./Calculator"
 import CalcEntry from './CalcEntry';
-
+import Table from './Table';
 
 const Portfolio = () => {
     return (
@@ -12,9 +12,8 @@ const Portfolio = () => {
                 <PieGraph />
                 <Calculator />
                 <CalcEntry />
-
+                <Table />
             </div>
-
         </div>
     )
 }
