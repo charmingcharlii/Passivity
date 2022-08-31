@@ -2,13 +2,13 @@
 const CalcEntry = ({ symbol, holding }) => {
 
   // creates the fetch call from user input 
-  let symbol = 'AAPL' // will be user input 
+  let userInput = 'AAPL' // will be user input 
   let fetchCall = `https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=`
-  let symbolQuery = fetchCall+symbol
+  let symbolQuery = fetchCall+userInput
   const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
+        'X-RapidAPI-Key': '10c804eb9dmsh767850cc77dae2fp1d40cfjsn0a11563a3a53',
         'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     }
   };
@@ -17,10 +17,18 @@ const CalcEntry = ({ symbol, holding }) => {
   .then(response => console.log(response))
   .catch(err => console.error(err));
 
+  // info from api call 
+  // let shares = 5 //input from user 
+  // let averageStockPrice = fetchResponse.valuation.valuationDetails.valuationDetail[0].equityDetail.priceToBookTTM
+  // let mktPrice = 'info from call'
+  // let base = shares*averageStockPrice
+  // let mktValue = shares*mktPrice
+  // console.log(shares)
+
   return (
     <div className="border-black border-2 w-full h-auto flex justify-between">
-      <p className="grow">Symbol: {symbol}</p>
-      <p className="grow">Holdings: {holding}</p>
+      <p className="grow">Symbol: {symbol}</p>   {/* will be userInput? */}
+      <p className="grow">Holdings: {holding}</p> {/* will be shares? */}
       <button className="grow">Edit</button>
 
     </div>
