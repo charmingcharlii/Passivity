@@ -12,16 +12,16 @@ export const data = [
 
 export const options = {
     title: "Sector Diversification",
-    pieHole: 0.5,
-    is3D: false,
+    // pieHole: 0.5,
+    is3D: true,
 };
 
 export default function PieGraph() {
     return (
         <Chart
             chartType="PieChart"
-            width="100%"
-            height="400px"
+            width="auto"
+            height="auto"
             data={data}
             options={options}
         />

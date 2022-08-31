@@ -21,6 +21,4 @@ const stockSchema = new Schema(
     }
 );
 
-const Stocks = model("Stocks", stockSchema);
-
-module.exports = Stocks;
+module.exports = stockSchema;
