@@ -41,7 +41,6 @@ const resolvers = {
         }, 
         saveHolding: async (parent, {holdingData}, context) => {
 
-            //Don't know if this is explicitly necessary but it makes sure the user is authenticated.
             //if(context.user) {
                 const stock = await Stock.create({
                             ticker: holdingData.ticker,
