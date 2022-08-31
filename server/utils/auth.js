@@ -5,11 +5,11 @@ const secret = 'shhhsosecret'
 const expiration = '2h'
 
 module.exports = {
-    authMiddleware({req}) {
+    authMiddleware: function ({req}) {
         let token = req.body.token || req.query.token || req.headers.authorization
 
         if(req.headers.authorization) {
-            token = token.split('').pop().trim()
+            token = token.split(' ').pop().trim()
         }
 
         if(!token){
@@ -17,6 +17,7 @@ module.exports = {
         }
 
         try {
+            // i think this is where the user info is meant to be attatched, so why is it not coming thru context?
             const { data } = jwt.verify(token, secret, { maxAge: expiration })
             req.user = data
         }
@@ -24,9 +25,11 @@ module.exports = {
             console.error(err)
             console.log('invalid token')
         }
+
+        return req
     },
-    signToken({ username, email, _id }){
-        const payload = { username, email, _id }
+    signToken: function({ username, _id }){
+        const payload = { username, _id }
 
         return jwt.sign({ data: payload }, secret, { expiresIn: expiration })
     }

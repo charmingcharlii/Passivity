@@ -17,14 +17,16 @@ const LoginForm = () => {
 
     const loginHandler = async (e) => {
         e.preventDefault()
-        // mutation for login TODO
+        // mutation for login
         try {
             const mutationResponse = await login({
+                // pass in needed login info
                 variables: {
                     username: name,
                     password
                 }
             })
+            // check for token response - if exists, set in local storage
             const token = mutationResponse.data.login.token;
             // add auth function
             AuthService.login(token)
@@ -32,14 +34,13 @@ const LoginForm = () => {
         catch (err) {
             console.log(err)
         }
-
         setName('')
         setPassword('')
     }
 
     const createAccountHandler = async (e) => {
         e.preventDefault()
-        // mutation for newAccount TODO
+        // mutation for newAccount
         try {
             const mutationResponse = await addUser({
                 variables: {
