@@ -1,8 +1,8 @@
 const About = () => {
     return (
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center h-screen ">
 
-            <div className="bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
+            <div className=" border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
 
                 <div className="p-4 text-gray-600">
                     <h1 className="mb-8 text-center text-3xl font-bold text-indigo-900">What we do :</h1>
@@ -42,7 +42,24 @@ const About = () => {
                         </li>
                     </ul>
                 </div>
+                <section class="section section-one  border border-indigo-200 ">
+                    <img
+                        class="section-image section-image-1"
+                        src="images/illustration-grow-together.svg"
+                        alt="A sketched man and woman wearing black and grey while standing on opposite sides"
+                    />
+                    <div class="section-text">
+                        <h2 class="section-title">Grow Together</h2>
+                        <p class="section-paragraph">
+                            Generate meaningful discussions with our audience and build a
+                            strong, loyal community. Think of the insightful conversations you
+                            miss out on with a feedback form.
+                        </p>
+                    </div>
+                </section>
             </div>
+
+
 
         </div>
     )

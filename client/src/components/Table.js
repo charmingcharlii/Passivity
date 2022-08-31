@@ -82,7 +82,7 @@ const styles = {
 };
 
 const Table = () => (
-    <div style={styles.container}>
+    <div className='' style={styles.container}>
         <CRUDTable
             caption="Tasks"
             fetchItems={payload => service.fetchItems(payload)}

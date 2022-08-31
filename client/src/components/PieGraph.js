@@ -12,7 +12,6 @@ export const data = [
 
 export const options = {
     title: "Sector Diversification",
-    // pieHole: 0.5,
     is3D: true,
 };
 
