@@ -16,6 +16,7 @@ const typeDefs = gql`
         updateUser(username: String!, email: String!, password: String!): User
 
     }
+    
 
     type User {
         _id: ID!
@@ -46,8 +47,3 @@ const typeDefs = gql`
 
 module.exports = typeDefs;
 
-// type Portfolio {
-//     user: User
-//     stocks: [ Stocks ]
-//     totalInvestment: Int!
-// }
