@@ -14,6 +14,7 @@ const resolvers = {
     }, 
 
     Mutation: {
+
         addUser: async (parent, args) => {
             const user = await User.create(args);
 
@@ -22,6 +23,7 @@ const resolvers = {
             return {token, user};
 
         }, 
+
         login: async (parent, { username, password }) => {
             const user = await User.findOne({ username });
 
@@ -38,7 +40,26 @@ const resolvers = {
             
             return {token, user};
 
-        }, 
+        },
+
+        updateUser: async (parent, {username, email, password}, context) => {
+            
+            if (context.user) {
+
+                const user = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { email: email, username: username, password: password },
+                    { new: true }
+                );
+
+                return user;
+
+            }
+
+            throw new AuthenticationError("You must be logged in.");
+
+        },
+
         saveHolding: async (parent, {holdingData}, context) => {
 
             //if(context.user) {
@@ -57,11 +78,12 @@ const resolvers = {
                 
                 return updatedPortfolio;
 
-            //}
+            }
             
-            //throw new AuthenticationError("Please log in first.");
+            throw new AuthenticationError("Please log in first.");
 
         }
+
     }
 };
 
