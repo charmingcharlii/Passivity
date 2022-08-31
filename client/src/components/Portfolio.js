@@ -5,6 +5,7 @@ import CalcEntry from './CalcEntry';
 import { GET_USER } from '../utils/queries'
 import { useQuery } from '@apollo/client'
 import { useEffect, useState } from "react";
+import Table from './Table';
 
 
 const Portfolio = () => {
@@ -12,9 +13,9 @@ const Portfolio = () => {
     const [user, setUser] = useState()
     // set user info on page load
     useEffect(() => {
-        if(data){
-        setUser(data.me)
-        console.log(user)
+        if (data) {
+            setUser(data.me)
+            console.log(user)
         }
     })
 
@@ -24,14 +25,18 @@ const Portfolio = () => {
 
                 <div className="bg-slate-200 text-slate-500 font-bold rounded-lg border shadow-lg p-10">
 
+
                     <PieGraph />
                     <Calculator />
                     <CalcEntry symbol={'test'} holding={'test'} />
 
+                    <Table />
+
                 </div>
 
-            </div>
-        </div>
+
+            </div >
+        </div >
     )
 }
 
