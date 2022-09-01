@@ -1,8 +1,16 @@
 # Passivity #
 
+## Contents ##
+
+1. Description
+2. Technologies
+3. 
+
 ## Description ##
 
-An important part of securing your future retirement comfort is by generating passive income. Dividends are an excellent way of securing this income.  With Passivity your 
+An important part of securing ones' future retirement comfort is through the generation of passive income. One of the most effective ways to achieve this is through the use of dividend stocks. However, deciding  where to invest ones' money in order to gain the highest return of investment over time can be an exceedingly difficult affair. Enter Passivity.
+
+Passivity is a full-stack web application that makes the tracking of dividend returns quick and easy. After creating and logging into an account, users are given a personal portfolio page and calculator that they can use. Whether you want to get an idea of where to invest or you want somewhere to keepp track of dividend stocks, Passivity makes the ordeal easy and fun!
 
 ## Technologies ##
 
