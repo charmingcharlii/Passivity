@@ -41,7 +41,7 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   <img
-                    className="block h-8 w-auto lg:hidden"
+                    className="block h-8 w-auto"
                     src="https://picsum.photos/200"
                     alt="Passivity Logo"
                   />
@@ -67,9 +67,10 @@ export default function Example() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 {/* Profile dropdown */}
-                {AuthService.loggedIn() ? <Menu as="div" className="relative ml-3">
+                {AuthService.loggedIn() ? 
+                <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 sm:hidden">
+                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -112,7 +113,6 @@ export default function Example() {
                         {({ active }) => (
                           <p
                             onClick={() => AuthService.logout()}
-                            href="#"
                             className={classNames(active ? 'bg-gray-100 cursor-pointer' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
