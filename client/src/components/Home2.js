@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
-        <div class="container pt-32 pb-32">
+        <div className="container pt-32 pb-32">
 
             <header className=" home2 md:rounded-md p-12 border border-indigo-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 mx-auto  items-center max-w-6xl mx-auto md:rounded-md">
@@ -30,11 +30,11 @@ const Home = () => {
                         </div>
                     </div>
                 </div >
-                <div class="flex items-center justify-center pt-16 pb-16 ">
-                    <section class="section-4 border border-indigo-200">
-                        <div class="section-bottom">
-                            <h2 class="section-bottom-title">Ready To Join our Community?</h2>
-                            <Link class="bg-purple-500 btn section-btn" to="/login">Sign Up For Free</Link>
+                <div className="flex items-center justify-center pt-16 pb-16 ">
+                    <section className="section-4 border border-indigo-200">
+                        <div className="section-bottom">
+                            <h2 className="section-bottom-title">Ready To Join our Community?</h2>
+                            <Link className="bg-purple-500 btn section-btn" to="/login">Sign Up For Free</Link>
                         </div>
                     </section>
                 </div>

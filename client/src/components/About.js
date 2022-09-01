@@ -44,10 +44,10 @@ const About = () => {
                         </li>
                     </ul>
                 </div>
-                <section class="section section-one  border border-indigo-200 ">
-                    <div class="section-text">
-                        <h2 class="section-title">Grow Together</h2>
-                        <p class="section-paragraph">
+                <section className="section section-one  border border-indigo-200 ">
+                    <div className="section-text">
+                        <h2 className="section-title">Grow Together</h2>
+                        <p className="section-paragraph">
                             Generate meaningful discussions with our audience and build a
                             strong, loyal community. Think of the insightful conversations you
                             miss out on with a feedback form.
