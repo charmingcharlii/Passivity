@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
-        <div class="container pt-[20px]">
+        <div class="container pt-32 pb-32">
 
             <header className=" home2 md:rounded-md p-12 border border-indigo-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 mx-auto  items-center max-w-6xl mx-auto md:rounded-md">
@@ -19,11 +19,11 @@ const Home = () => {
                             Here at passivity we feel that investing doesn’t have to be that hard!
                         </p>
                     </div>
-                    <div className=" ">
-                        <div className=" border border-indigo-200 transform md:rounded-md absolute bg-slate-300 transform -translate-x-10 relative h-64 ">
+                    <div className="container">
+                        <div className="box1 border border-indigo-200 md:rounded-md bg-slate-300 h-48 w-96 ">
                         </div>
 
-                        <div className=" border border-indigo-200 transform md:rounded-md bg-white rotate-3 scale-110 translate-x-10 md:shadow-2xl -ml-4 -mt-44 p-12 space-y-2">
+                        <div className=" border border-indigo-200 md:rounded-md bg-white md:shadow-2xl -mt-60 - mx-2 p-12">
                             <div className="mx-auto">
                                 <img className="object-cover h-48 w-96 " src={logo} alt="Logo" />
                             </div>
@@ -39,18 +39,6 @@ const Home = () => {
                     </section>
                 </div>
             </header>
-            <main>
-                {/* <div class="flex items-center justify-center pb-32">
-                    <section class="section-4">
-                        <div class="section-bottom">
-                            <h2 class="section-bottom-title">Ready To Join our Community?</h2>
-                            <a class="btn section-btn" href="#">Sign Up For Free</a>
-                        </div>
-                    </section>
-                </div> */}
-            </main>
-
-
         </div>
     )
 }
