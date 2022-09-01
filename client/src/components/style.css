@@ -253,6 +253,13 @@
     justify-self: center;
     align-self: end;
   }
+
+  .box1 {
+    max-width: 400px;
+    width: auto;
+  height: 280px;
+  }
+  
   
   /* ==============
   Media Query

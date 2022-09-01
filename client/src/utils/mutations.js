@@ -60,6 +60,7 @@ mutation Mutation($ticker: String!) {
     ticker
     holding
     value
+
   }
 }
 `

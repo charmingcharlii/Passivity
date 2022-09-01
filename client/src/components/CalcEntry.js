@@ -1,49 +1,60 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 const CalcEntry = ({ symbol, holding }) => {
-
+  const [avgStockPrice, setAvgStockPrice] = useState(0)
+  const [base, setBase] = useState(0)
   // creates the fetch call from user input 
   let userInput = 'AAPL' // will be user input 
-  let fetchCall = `https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=`
-  let symbolQuery = fetchCall + userInput
+  let fetchCall = `https://fidelity-investments.p.rapidapi.com/quotes/get-mashup?symbol=${userInput}`
+
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '1e793e6352msh12ddffa69e15e9bp1d2e14jsnfb7957603246',
+      'X-RapidAPI-Key': '6ec6cf3aa6msh04ad88a208dda4ap1e0104jsn10035a179610',
       'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     }
   };
 
   //If you want to run this ONCE when the component loads || if you want this to run only when something in your state changes, useEffect!
-  // useEffect(() => {
-  //   runFetchResponse().then(data => {
-  //     data
-  //   });
-  // })
+  useEffect(() => {
+    runFetchResponse();
+  }, [])
 
-  const getFetchResponse = async (symbolQuery) => {
-    await fetch(symbolQuery, options)
+  const getFetchResponse = async (fetchCall, userInputShares) => {
+    await fetch(fetchCall, options)
       .then(response => response.json())
       .then(data => {
-        let testData = data;
-        // data from api call
-        let averageStockPrice = testData.mashup.dividend.dividendDetails.dividendDetail[0].equityDetail.payoutRatioTTM
-        let shares = 5 //input from user 
-        let base = shares*averageStockPrice
-        console.log(base)
+        try {
+          if (data.message) {
+            alert(data.message)
+          } else {
+            let testData = data;
+            // data from api call
+            let averageStockPrice = testData.mashup?.["dividend"]?.dividendDetails.dividendDetail[0].equityDetail.payoutRatioTTM
+            setAvgStockPrice(averageStockPrice)
+            setBase(userInputShares * averageStockPrice)
+            console.log('finished!')
+          }
+        }
+        catch (err) {
+          console.log(err)
+        }
       });
-
   }
 
   const runFetchResponse = async () => {
-    return await getFetchResponse(symbolQuery);
+    return await getFetchResponse(fetchCall, 5)
+      .then(() => {
+        console.log("avgStonk", avgStockPrice)
+        console.log('base', base)
+      })
   }
 
-  runFetchResponse();
+
 
   return (
     <div className="border-black border-2 w-full h-auto flex justify-between">
-      <p className="grow">Symbol: {symbol}</p>   {/* will be userInput? */}
-      <p className="grow">Holdings: {holding}</p> {/* will be shares? */}
+      <p className="grow">Stock Price Avg: <span className='output'>{avgStockPrice === 0 ? 'Loading...' : `$${avgStockPrice.toFixed(2)}`}</span></p>   {/* will bxe userInput? */}
+      <p className="grow">Base: <span className='output'>{base === 0 ? 'Loading...' : `$${base.toFixed(2)}`}</span></p> {/* will be shares? */}
       <button className="grow">Edit</button>
 
     </div>

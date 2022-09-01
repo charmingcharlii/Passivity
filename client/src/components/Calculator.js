@@ -14,7 +14,7 @@ export default function Calculator() {
     // const options = {
     //     method: 'GET',
     //     headers: {
-    //         'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
+    //         'X-RapidAPI-Key': ,
     //         'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     //     }
     // };
@@ -23,27 +23,15 @@ export default function Calculator() {
     //     .then(response => response.json())
     //     .then(response => console.log(response))
     //     .catch(err => console.error(err));
-
-    return (
-        <div id="container">
-            <div id="gain">
-                Total Gain:
-            </div>
-            {/* <table id="table_id">
-
-                <thead>
-                    <tr>
-                        <th>Stock</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        Symbol <input id="stock"></input>
-                        Holdings <input id="holdings"></input>
-                        <button id="calcBtn"> Calculate </button>
-                    </tr>
-                </tbody>
-            </table> */}
-        </div>
-    )
+    // let test = 1
+    // return (
+    //     <div>
+    //       Stock: 
+    //       Holdings:
+    //       Gain: 
+    //         <p className="grow">Symbol: {test}</p>   {/* will be userInput? */}
+    //         <p className="grow">Holdings: {test}</p> {/* will be shares? */}
+    //         <button className="grow">Edit</button>
+    //     </div>
+    // )
 }
