@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 const CalcEntry = ({ symbol, holding }) => {
   const [avgStockPrice, setAvgStockPrice] = useState(0)
   const [estimatedReturn, setEstimatedReturn] = useState(0)
