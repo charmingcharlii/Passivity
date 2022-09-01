@@ -1,8 +1,16 @@
+import Avatar1 from "../assets/Avatar1.png"
+import { FaTwitterSquare } from 'react-icons/fa';
+import { MdAlternateEmail } from "react-icons/md";
+import { FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+
+
+
 const About = () => {
     return (
-        <div className="flex items-center justify-center p-20">
+        <div className="flex items-center justify-center container pt-32 pb-32">
 
-            <div className="border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
+            <div className="border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10 mt-32">
 
                 <div className="p-4 text-gray-600">
                     <h1 className="mb-4 text-center text-3xl font-bold text-indigo-900">What we do :</h1>
@@ -44,21 +52,87 @@ const About = () => {
                         </li>
                     </ul>
                 </div>
-                <section className="section section-one  border border-indigo-200 ">
-                    <div className="section-text">
-                        <h2 className="section-title">Grow Together</h2>
-                        <p className="section-paragraph">
-                            Generate meaningful discussions with our audience and build a
-                            strong, loyal community. Think of the insightful conversations you
-                            miss out on with a feedback form.
-                        </p>
-                    </div>
-                </section>
-            </div>
+
+                <header class="text-center mx-auto mb-12 border border-indigo-200 rounded-lg ">
+                    <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
+                        <span class="font-light">Our</span> Team:
+                        <div className=" container team flex">
+                            <div className="container teamMember">
+                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
+                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
+                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                                    <FaTwitterSquare />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                            <div className="container teamMember">
+                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
+                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
+                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                                    <FaTwitterSquare />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                            <div className="container teamMember">
+                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
+                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
+                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                                    <FaTwitterSquare />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                            <div className="container teamMember">
+                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
+                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
+                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
+                                    <FaTwitterSquare />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+
+                        </div>
 
 
-
-        </div>
+                    </h2>
+                </header>
+            </div >
+        </div >
     )
 }
 
