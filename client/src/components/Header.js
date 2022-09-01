@@ -1,6 +1,6 @@
 import AuthService from '../utils/auth'
 import { Link } from 'react-router-dom'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -15,6 +15,12 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+
+    if(!AuthService.loggedIn()){
+      navigation.pop()
+    }
+
+
   return (
     <Disclosure as="nav" className="bg-gray-800 fixed w-full ">
       {({ open }) => (
