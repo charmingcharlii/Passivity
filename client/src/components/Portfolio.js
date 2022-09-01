@@ -14,7 +14,6 @@ const Portfolio = () => {
     useEffect(() => {
         if (data) {
             setUser(data.me)
-            console.log(user)
         }
     }, [])
 
