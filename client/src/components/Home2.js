@@ -8,15 +8,15 @@ const Home = () => {
     return (
         <div className="container pt-32 pb-32">
 
-            <header className=" home2 md:rounded-md p-12 border border-indigo-200">
+            <header className="home2 md:rounded-md p-12 border border-indigo-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2  gap-10 mx-auto  items-center max-w-6xl mx-auto md:rounded-md">
                     <div className="px-4">
                         {/* using emojis as emphasis vs a word should be consis */}
                         <h3 className="text-4xl pr-6 sm:leading-snug tracking-tight font-bold text-black md:rounded-md ">
-                            We know investing can sometimes feel like a really hard 🧩.
+                            We know investing can sometimes feel like a hassle.
                         </h3>
                         <p className="md:rounded-md mt-4 text-stone-800 text-xl font-medium">
-                            Here at passivity we feel that investing doesn’t have to be that hard!
+                            Here at passivity, we think investing doesn’t have to be that hard!
                         </p>
                     </div>
                     <div className="container">

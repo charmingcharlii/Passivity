@@ -29,7 +29,7 @@ const About = () => {
                             <div>
                                 <div className="text-xl font-bold text-indigo-800">Design</div>
                                 {/* maybe set the last sentence of this to '...all the information you need to fast track your portfolio' emoji options: 📊 📈 */}
-                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900"> Analysis paralysis is real - we took the data 🧩, and made it easy to read📘 by designing an easy access table that gives you all the information you need to get your portfolio started, and nothing you don't.
+                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900"> Analysis paralysis is real - we take the data 📈 and make it easy to read 📘 with an easy access table that gives you all the info you need to fast track your portfolio.
                                 </p>
                             </div>
                         </li>
@@ -38,7 +38,7 @@ const About = () => {
                             <div>
                                 <div className="text-xl font-bold text-indigo-800">Development</div>
                                 {/* we're always striving to develop new features... */}
-                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900">Our plan is to continue developing features that will help YOU digest technical company decisions and make more informed investements to drive the direction of your portfolio.
+                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900">We're always striving to develop new features to help YOU digest technical company decisions, make more informed investements, and drive the direction of your portfolio.
                                 </p>
                             </div>
                         </li>
