@@ -4,6 +4,7 @@ const CalcEntry = ({ symbol, holding }) => {
   const [estimatedReturn, setEstimatedReturn] = useState(0)
   const [holdings, setHoldings] = useState(0)
   const [stock, setStock] = useState('')
+  const [test, setTest] = useState(false)
   // const [dividends, setDividends] = useState(0)
 
   // creates the fetch call from user input 
@@ -13,7 +14,7 @@ const CalcEntry = ({ symbol, holding }) => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '6ec6cf3aa6msh04ad88a208dda4ap1e0104jsn10035a179610',
+      'X-RapidAPI-Key': process.env.FID_API,
       'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     }
   };
@@ -21,8 +22,7 @@ const CalcEntry = ({ symbol, holding }) => {
   //If you want to run this ONCE when the component loads || if you want this to run only when something in your state changes, useEffect!
   useEffect(() => {
     runFetchResponse();
-  }, [])
-
+  },[test])
   const getFetchResponse = async (fetchCall, userInputShares) => {
     await fetch(fetchCall, options)
       .then(response => response.json())
@@ -55,7 +55,10 @@ const CalcEntry = ({ symbol, holding }) => {
   }
   
   const calculate = () => {
-    setEstimatedReturn(holdings * avgStockPrice)
+    setTest(!test)
+    setTimeout(()=> {
+      setEstimatedReturn(holdings * avgStockPrice)
+    },10)
    return (
     console.log({estimatedReturn})
    )
