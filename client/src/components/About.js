@@ -13,8 +13,8 @@ const About = () => {
             <div className="border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
 
                 <div className="p-4 text-gray-600">
-                    <h1 className="mb-8 text-center text-3xl font-bold text-indigo-900">What we do :</h1>
-                    <h3 className="mb-8 text-center text-xl font-light text-indigo-900"> We compile all of the necessary dividend information for a stock you've purchased and track that data - so YOU don't have to. </h3>
+                    <h1 className="mb-4 text-center text-3xl font-bold text-indigo-900">What we do :</h1>
+                    <h3 className="mb-8 w-1/2 mx-auto text-center text-xl font-light text-indigo-900"> We compile all of the necessary dividend information for a stock you've purchased and track that data - so YOU don't have to. </h3>
 
 
                     <ul className="grid place-content-center sm:grid-cols-2 gap-8">
@@ -36,8 +36,8 @@ const About = () => {
                             <div className="px-4 text-5xl font-extralight text-indigo-700">03.</div>
                             <div>
                                 <div className="text-xl font-bold text-indigo-800">Design</div>
-                                {/* maybe set the last sentence of this to '...all the information you need to fast track your portfolio' */}
-                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900"> Analysis paralysis is real - we took the data 🧩, and made it easy to read📘 by designing an easy access table that gives you all the information you need to get your portfolio started, and nothing you don't.
+                                {/* maybe set the last sentence of this to '...all the information you need to fast track your portfolio' emoji options: 📊 📈 */}
+                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900"> Analysis paralysis is real - we take the data 📈 and make it easy to read 📘 with an easy access table that gives you all the info you need to fast track your portfolio.
                                 </p>
                             </div>
                         </li>
@@ -45,14 +45,13 @@ const About = () => {
                             <div className="px-4 text-5xl font-extralight text-indigo-700">04.</div>
                             <div>
                                 <div className="text-xl font-bold text-indigo-800">Development</div>
-                                {/* we're always strive to develop new features... */}
-                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900">Our plan is to continue developing features that will help YOU digest technical company decisions and make more informed investements to drive the direction of your portfolio.
+                                {/* we're always striving to develop new features... */}
+                                <p className="max-w-xs py-2 font-light text-sm text-indigo-900">We're always striving to develop new features to help YOU digest technical company decisions, make more informed investements, and drive the direction of your portfolio.
                                 </p>
                             </div>
                         </li>
                     </ul>
                 </div>
-
                 <header class="text-center mx-auto mb-12 border border-indigo-200 rounded-lg ">
                     <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
                         <span class="font-light">Our</span> Team:

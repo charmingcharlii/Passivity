@@ -51,14 +51,14 @@ const resolvers = {
         },
 
         //Used for updating an existing user's account information.
-        updateUser: async (parent, {username, email, password}, context) => {
+        updateUser: async (parent, {username, email}, context) => {
             
             if (context.user) {
 
                 //Find a user by the id parameter passed in then update the necessary fields.
                 const user = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { email: email, username: username, password: password },
+                    { email: email, username: username },
                     { new: true }
                 );
 

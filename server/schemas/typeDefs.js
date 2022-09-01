@@ -13,7 +13,7 @@ const typeDefs = gql`
         saveHolding( holdingData: StockInput! ): User
         updateHolding( holdingData: StockInput! ): Stocks
         removeHolding( ticker: String!): Stocks
-        updateUser(username: String!, email: String!, password: String!): User
+        updateUser(username: String!, email: String!): User
 
     }
     
