@@ -14,7 +14,7 @@ export default function Calculator() {
     // const options = {
     //     method: 'GET',
     //     headers: {
-    //         'X-RapidAPI-Key': 'a7c44cc221mshcba2a134652cbf7p18ad27jsn84acac37d6f5',
+    //         'X-RapidAPI-Key': ,
     //         'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     //     }
     // };

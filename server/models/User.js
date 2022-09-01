@@ -2,8 +2,7 @@ const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
 const stockSchema = require('./Stock')
 
-
-//TODO: Add portfolio to user. Check password encryption.
+//Creates a user schema for users.
 const userSchema = new Schema(
     {
         username: {
