@@ -14,7 +14,7 @@ const CalcEntry = ({ symbol, holding }) => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '6ec6cf3aa6msh04ad88a208dda4ap1e0104jsn10035a179610',
+      'X-RapidAPI-Key': process.env.FID_API,
       'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     }
   };
