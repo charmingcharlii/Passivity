@@ -2,6 +2,8 @@ import logo from "../assets/PassivityLogo.png"
 // Component's Base CSS
 import './style.css';
 
+import { Link } from "react-router-dom";
+
 const Home = () => {
     return (
         <div class="container pt-[20px]">
@@ -31,7 +33,7 @@ const Home = () => {
                     <section class="section-4 border border-indigo-200">
                         <div class="section-bottom">
                             <h2 class="section-bottom-title">Ready To Join our Community?</h2>
-                            <a class="bg-purple-500 btn section-btn" href="#">Sign Up For Free</a>
+                            <Link class="bg-purple-500 btn section-btn" to="/login">Sign Up For Free</Link>
                         </div>
                     </section>
                 </div>
