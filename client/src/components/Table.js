@@ -84,7 +84,7 @@ const styles = {
 const Table = () => (
     <div className='' style={styles.container}>
         <CRUDTable
-            caption="Tasks"
+            caption="Stocks"
             fetchItems={payload => service.fetchItems(payload)}
         >
             <Fields>
@@ -96,8 +96,8 @@ const Table = () => (
                 />
                 <Field
                     name="title"
-                    label="Title"
-                    placeholder="Title"
+                    label="Stock"
+                    placeholder="Stock"
                 />
                 <Field
                     name="description"
@@ -107,8 +107,8 @@ const Table = () => (
             </Fields>
             <CreateForm
                 title="Task Creation"
-                message="Create a new task!"
-                trigger="Create Task"
+                message="Add a new Stock!"
+                trigger="Add a Stock"
                 onSubmit={task => service.create(task)}
                 submitText="Create"
                 validate={(values) => {
@@ -127,7 +127,7 @@ const Table = () => (
 
             <UpdateForm
                 title="Task Update Process"
-                message="Update task"
+                message="Update Stock"
                 trigger="Update"
                 onSubmit={task => service.update(task)}
                 submitText="Update"
