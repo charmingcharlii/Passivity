@@ -44,6 +44,23 @@ mutation Mutation($holdingData: StockInput!) {
 `
 
 // UPDATE STOCK
-
+//PLACEHOLDER
 
 // DELETE STOCK
+/*
+ * Takes in a ticker string.
+ * Deletes the corresponding stock element from the userPortfolio.
+ */
+export const DELETE_STOCK = gql`
+mutation Mutation($ticker: ticker) {
+  removeHolding(ticker: $ticker) {
+    userPortfolio {
+      ticker
+      holding
+      value
+    }
+    username
+    email
+  }
+}
+`
