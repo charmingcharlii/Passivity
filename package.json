@@ -2,6 +2,9 @@
   "name": "project3",
   "version": "1.0.0",
   "main": "server/server.js",
+  "engines": {
+    "node": "v14.x"
+  },
   "dependencies": {
     "dotenv": "^16.0.2",
     "react-icons": "^4.4.0",
