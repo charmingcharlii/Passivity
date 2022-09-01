@@ -1,4 +1,4 @@
-import logo from "../assets/PassivityLogo.png"
+import logo from "../assets/PassivityLogo2.png"
 // Component's Base CSS
 import './style.css';
 
