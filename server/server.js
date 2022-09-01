@@ -1,6 +1,3 @@
-const dotenv = require('dotenv')
-dotenv.config()
-
 //Server Imports
 const express = require("express");
 const path = require("path");
