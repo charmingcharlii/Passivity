@@ -1,5 +1,4 @@
 import PieGraph from "./PieGraph"
-import Calculator from "./Calculator"
 import CalcEntry from './CalcEntry';
 
 import { GET_USER } from '../utils/queries'
@@ -27,7 +26,6 @@ const Portfolio = () => {
 
 
                     <PieGraph />
-                    <Calculator />
                     <CalcEntry symbol={'test'} holding={'test'} />
 
                     <Table />

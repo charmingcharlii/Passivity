@@ -15,10 +15,9 @@ import Header from './components/Header';
 import LoginCard from './components/LoginCard';
 import About from './components/About';
 import Footer from './components/Footer';
-import Calculator from './components/Calculator';
 import Home from './components/Home2';
-import PieGraph from './components/PieGraph';
 import Portfolio from './components/Portfolio';
+import Profile from './components/Profile';
 
 
 const httpLink = createHttpLink({
@@ -68,6 +67,10 @@ function App() {
           {/* <Route path='/calculator' element={
           <Calculator />
         } /> */}
+        {/* profile route */}
+        <Route path='/profile' element={
+          <Profile />
+        } />
         </Routes>
         <Footer />
       </Router>
