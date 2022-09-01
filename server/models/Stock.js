@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 
+//This does not need to be a model because it's directly attached.
 const stockSchema = new Schema(
     {
         ticker: {

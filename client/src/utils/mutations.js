@@ -51,7 +51,7 @@ mutation Mutation($holdingData: StockInput!) {
 `
 
 // UPDATE STOCK
-
+//PLACEHOLDER
 
 // DELETE STOCK
 export const REMOVE_STOCK = gql`
