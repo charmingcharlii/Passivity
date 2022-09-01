@@ -8,9 +8,9 @@ import { FaLinkedin } from 'react-icons/fa';
 
 const About = () => {
     return (
-        <div className="flex items-center justify-center p-36">
+        <div className="flex items-center justify-center container pt-32 pb-32">
 
-            <div className="border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10">
+            <div className="border border-indigo-200 bg-slate-200 text-white font-bold rounded-lg border shadow-lg p-10 mt-32">
 
                 <div className="p-4 text-gray-600">
                     <h1 className="mb-4 text-center text-3xl font-bold text-indigo-900">What we do :</h1>
@@ -52,6 +52,7 @@ const About = () => {
                         </li>
                     </ul>
                 </div>
+
                 <header class="text-center mx-auto mb-12 border border-indigo-200 rounded-lg ">
                     <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
                         <span class="font-light">Our</span> Team:
@@ -130,8 +131,8 @@ const About = () => {
 
                     </h2>
                 </header>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
