@@ -23,10 +23,7 @@ const userSchema = new Schema(
             required: true
         },
 
-        userPortfolio: {
-            type: Schema.Types.ObjectId,
-            ref: "Portfolio",
-        }
+        userPortfolio: [stockSchema]
 
     },
     {
