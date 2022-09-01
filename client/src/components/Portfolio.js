@@ -17,7 +17,7 @@ const Portfolio = () => {
             setUser(data.me)
             console.log(user)
         }
-    })
+    }, [])
 
     return (
         <div>
