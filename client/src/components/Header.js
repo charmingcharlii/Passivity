@@ -5,7 +5,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
+  { name: 'Home', href: '/', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Portfolio', href: '/portfolio', current: false },
 ]
@@ -61,7 +61,7 @@ export default function Example() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                {AuthService.loggedIn() ? <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 sm:hidden">
                       <span className="sr-only">Open user menu</span>
@@ -82,7 +82,7 @@ export default function Example() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {<>
+                     
                       <Menu.Item>
                         {({ active }) => (
                           <a
@@ -103,18 +103,6 @@ export default function Example() {
                           </a>
                         )}
                       </Menu.Item>
-                      </>}
-                      {!AuthService.loggedIn() ? 
-                      <Menu.Item>
-                      {({ active }) => (
-                        <Link
-                          to={'/login'}
-                          className={classNames(active ? 'bg-gray-100 cursor-pointer' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                        >
-                          Sign In
-                        </Link>
-                      )}
-                    </Menu.Item> :
                       <Menu.Item>
                         {({ active }) => (
                           <p
@@ -125,10 +113,10 @@ export default function Example() {
                             Sign out
                           </p>
                         )}
-                      </Menu.Item>}
+                      </Menu.Item>
                     </Menu.Items>
                   </Transition>
-                </Menu>
+                </Menu> : <Link className='text-white' to={'/login'}>Login</Link>}
               </div>
             </div>
           </div>

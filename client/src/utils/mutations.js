@@ -25,8 +25,15 @@ mutation Mutation($username: String!, $password: String!) {
   }
 `
 // UPDATE USER INFO
-
-// DELETE USER
+export const UPDATE_USER = gql`
+mutation Mutation($username: String!, $email: String!, $password: String!) {
+  updateUser(username: $username, email: $email, password: $password) {
+    _id
+    username
+    email
+  }
+}
+`
 
 // ADD STOCK
 export const ADD_STOCK = gql`
@@ -47,20 +54,13 @@ mutation Mutation($holdingData: StockInput!) {
 //PLACEHOLDER
 
 // DELETE STOCK
-/*
- * Takes in a ticker string.
- * Deletes the corresponding stock element from the userPortfolio.
- */
-export const DELETE_STOCK = gql`
-mutation Mutation($ticker: ticker) {
+export const REMOVE_STOCK = gql`
+mutation Mutation($ticker: String!) {
   removeHolding(ticker: $ticker) {
-    userPortfolio {
-      ticker
-      holding
-      value
-    }
-    username
-    email
+    ticker
+    holding
+    value
+
   }
 }
 `
