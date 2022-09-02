@@ -1,5 +1,7 @@
 import AvatarM from "../assets/Avatar1.png"
-import { FaTwitterSquare } from 'react-icons/fa';
+import AvatarD from "../assets/AvatarD.png"
+import AvatarTJ from "../assets/AvatarTJ.png"
+import AvatarV from "../assets/AvatarV.png"
 import { MdAlternateEmail } from "react-icons/md";
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
@@ -61,7 +63,7 @@ const About = () => {
                     <ul className="grid place-content-center sm:grid-cols-2 gap-8">
                         <li className="flex">
                             <div className="container teamMember">
-                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <img src={AvatarD} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
                                 <p class="text-lg leading-normal font-bold mb-1">Devin Sinitiere</p>
                                 <a class="hover:text-blue-700" aria-label="Email link" href="#">
                                     <MdAlternateEmail />
@@ -91,7 +93,7 @@ const About = () => {
                         </li>
                         <li className="flex">
                             <div className="container teamMember">
-                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <img src={AvatarTJ} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
                                 <p class="text-lg leading-normal font-bold mb-1">Thomas (TJ) Wetmore</p>
                                 <a class="hover:text-blue-700" aria-label="Email link" href="#">
                                     <MdAlternateEmail />
@@ -106,7 +108,7 @@ const About = () => {
                         </li>
                         <li className="flex">
                             <div className="container teamMember">
-                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <img src={AvatarV} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
                                 <p class="text-lg leading-normal font-bold mb-1">Victoria Dunlap</p>
                                 <a class="hover:text-blue-700" aria-label="Email link" href="#">
                                     <MdAlternateEmail />
