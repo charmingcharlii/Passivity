@@ -96,13 +96,87 @@ const Table = () => (
                 />
                 <Field
                     name="title"
-                    label="Stock"
+                    label="Ticker"
                     placeholder="Stock"
                 />
                 <Field
-                    name="description"
-                    label="Description"
-                    render={DescriptionRenderer}
+                    name="shares"
+                    label="Shares"
+                    placeholder="Stock"
+                />
+                <Field
+                    name="avgCost"
+                    label="Avg-Cost"
+                    placeholder="Avg-Cost"
+                />
+                <Field
+                    name="costBasis"
+                    label="Cost-Basis"
+                    hideInCreateForm
+                    readOnly />
+                <Field
+                    name="mktPrice"
+                    label="Mkt-Price"
+                    hideInCreateForm
+                    readOnly />
+                <Field
+                    name="gain-loss"
+                    label="Gain-Loss"
+                    hideInCreateForm
+                    readOnly />
+                <Field
+                    name="growth"
+                    label="Growth(%)"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="Annual-Div"
+                    label="Annual-Div"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="frequency"
+                    label="Frequency"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="ex-eff-div"
+                    label="ex-eff-div"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="Declaration-Date"
+                    label="Declaration-Date"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="Record-Date"
+                    label="Record-Date"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="Payment-Date"
+                    label="Payment-Date"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="Dividend-Yield"
+                    label="Dividend-Yield"
+                    hideInCreateForm
+                    readOnly
+                />
+                <Field
+                    name="Annual-Income"
+                    label="Annual-Income"
+                    hideInCreateForm
+                    readOnly
                 />
             </Fields>
             <CreateForm

@@ -17,12 +17,14 @@ export const options = {
 
 export default function PieGraph() {
     return (
-        <Chart
-            chartType="PieChart"
-            width="auto"
-            height="auto"
-            data={data}
-            options={options}
-        />
+        <div className="container">
+            <Chart
+                chartType="PieChart"
+                width="auto"
+                height="auto"
+                data={data}
+                options={options}
+            />
+        </div>
     );
 }

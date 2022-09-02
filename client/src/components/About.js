@@ -1,4 +1,4 @@
-import Avatar1 from "../assets/Avatar1.png"
+import AvatarM from "../assets/Avatar1.png"
 import { FaTwitterSquare } from 'react-icons/fa';
 import { MdAlternateEmail } from "react-icons/md";
 import { FaGithub } from 'react-icons/fa';
@@ -52,85 +52,76 @@ const About = () => {
                         </li>
                     </ul>
                 </div>
-
-                <header class="text-center mx-auto mb-12 border border-indigo-200 rounded-lg ">
+                {/* this will be the new team section */}
+                <header className="p-4 text-gray-600 border border-indigo-200 rounded-lg">
                     <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
-                        <span class="font-light">Our</span> Team:
-                        <div className=" container team flex">
-                            <div className="container teamMember">
-                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
-                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
-                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
-                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                    <FaTwitterSquare />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
-                                    <MdAlternateEmail />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
-                                    <FaGithub />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
-                                    <FaLinkedin />
-                                </a>
-                            </div>
-                            <div className="container teamMember">
-                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
-                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
-                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
-                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                    <FaTwitterSquare />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
-                                    <MdAlternateEmail />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
-                                    <FaGithub />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
-                                    <FaLinkedin />
-                                </a>
-                            </div>
-                            <div className="container teamMember">
-                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
-                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
-                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
-                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                    <FaTwitterSquare />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
-                                    <MdAlternateEmail />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
-                                    <FaGithub />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
-                                    <FaLinkedin />
-                                </a>
-                            </div>
-                            <div className="container teamMember">
-                                <img src={Avatar1} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
-                                <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
-                                <p class="text-sm text-gray-500 leading-relaxed font-light">Founder CEO</p>
-                                <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                    <FaTwitterSquare />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
-                                    <MdAlternateEmail />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
-                                    <FaGithub />
-                                </a>
-                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
-                                    <FaLinkedin />
-                                </a>
-                            </div>
-
-                        </div>
-
-
+                        <span class="font-light">Our</span> <span class="text-indigo-700">Team:</span>
                     </h2>
+
+                    <ul className="grid place-content-center sm:grid-cols-2 gap-8">
+                        <li className="flex">
+                            <div className="container teamMember">
+                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Devin Sinitiere</p>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                        </li>
+                        <li className="flex">
+                            <div className="container teamMember">
+                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Michael Gonzalez</p>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                        </li>
+                        <li className="flex">
+                            <div className="container teamMember">
+                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Thomas (TJ) Wetmore</p>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                        </li>
+                        <li className="flex">
+                            <div className="container teamMember">
+                                <img src={AvatarM} class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image"></img>
+                                <p class="text-lg leading-normal font-bold mb-1">Victoria Dunlap</p>
+                                <a class="hover:text-blue-700" aria-label="Email link" href="#">
+                                    <MdAlternateEmail />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="GitHub link" href="#">
+                                    <FaGithub />
+                                </a>
+                                <a class="hover:text-blue-700" aria-label="LinkedIn link" href="#">
+                                    <FaLinkedin />
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </header>
+
             </div >
         </div >
     )
