@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken');
 
 const secret = 'shhhsosecret'
-// any particular expiration time?
-const expiration = '2h'
 
 module.exports = {
     authMiddleware: function ({req}) {
@@ -18,7 +16,7 @@ module.exports = {
 
         try {
             // i think this is where the user info is meant to be attatched, so why is it not coming thru context?
-            const { data } = jwt.verify(token, secret, { maxAge: expiration })
+            const { data } = jwt.verify(token, secret, {})
             req.user = data
         }
         catch (err) {
@@ -31,6 +29,6 @@ module.exports = {
     signToken: function({ username, _id }){
         const payload = { username, _id }
 
-        return jwt.sign({ data: payload }, secret, { expiresIn: expiration })
+        return jwt.sign({ data: payload }, secret, {})
     }
 }

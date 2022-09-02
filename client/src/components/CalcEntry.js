@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const CalcEntry = ({ symbol, holding }) => {
-  const [avgStockPrice, setAvgStockPrice] = useState(0)
-  const [estimatedReturn, setEstimatedReturn] = useState(0)
-  const [holdings, setHoldings] = useState(0)
-  const [stock, setStock] = useState('')
+const CalcEntry = ({ stock, setStock, setAvgStockPrice, avgStockPrice, estimatedReturn, setEstimatedReturn, holdings, setHoldings }) => {
   const [test, setTest] = useState(false)
   // const [dividends, setDividends] = useState(0)
 
@@ -15,7 +11,7 @@ const CalcEntry = ({ symbol, holding }) => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': process.env.FID_API,
+      'X-RapidAPI-Key': process.env.REACT_APP_FID_API,
       'X-RapidAPI-Host': 'fidelity-investments.p.rapidapi.com'
     }
   };
@@ -35,6 +31,7 @@ const CalcEntry = ({ symbol, holding }) => {
             let testData = data;
             // data from api call
             let averageStockPrice = testData.mashup?.["dividend"]?.dividendDetails.dividendDetail[0].equityDetail.payoutRatioTTM
+            // 
             setAvgStockPrice(averageStockPrice)
             // setestimatedReturn(userInputShares * averageStockPrice)
             console.log('finished!')
@@ -67,6 +64,7 @@ const CalcEntry = ({ symbol, holding }) => {
 
   return (
     <div className="border-black border-2 w-full h-auto flex justify-between">
+      {/*  */}
       <p className="grow">Stock: <input onChange={(e) => { setStock(e.target.value) }} value={stock} type="text"></input></p>
       <p className="grow">Holdings: <input onChange={(e) => { setHoldings(e.target.value) }} value={holdings} type="integer"></input></p>
       <p className="grow">Avg Stock Price: <span className='output'>{avgStockPrice === 0 ? 'Loading...' : `$${avgStockPrice.toFixed(2)}`}</span></p> 
