@@ -10,6 +10,12 @@ import Table from './Table';
 const Portfolio = () => {
     const { data } = useQuery(GET_USER)
     const [user, setUser] = useState()
+
+    const [avgStockPrice, setAvgStockPrice] = useState(0)
+    const [estimatedReturn, setEstimatedReturn] = useState(0)
+    const [holdings, setHoldings] = useState(0)
+    const [stock, setStock] = useState('')
+
     // set user info on page load
     useEffect(() => {
         if (data) {
@@ -25,7 +31,7 @@ const Portfolio = () => {
 
 
                     <PieGraph />
-                    <CalcEntry symbol={'test'} holding={'test'} />
+                    <CalcEntry setStock={setStock} stock={stock} setAvgStockPrice={setAvgStockPrice} avgStockPrice={avgStockPrice} estimatedReturn={estimatedReturn} setEstimatedReturn={setEstimatedReturn} holdings={holdings} setHoldings={setHoldings}  symbol={'test'} holding={'test'} />
 
                     <Table />
 
